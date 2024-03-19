@@ -29,7 +29,6 @@ class _RegistrationState extends State<Registration> {
                 ]
             ),
           ),
-          padding: EdgeInsets.fromLTRB(75, 0, 75, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
