@@ -80,6 +80,7 @@ class _RegistrationState extends State<Registration> {
                     children: [
                       TextSpan(text: 'Регистрируясь, вы соглашаетесь с ', style: TextStyle(color: Colors.black, fontSize: 18)),
                       TextSpan(text: 'политикой конфиденциальности', style: TextStyle(color: Colors.blue, fontSize: 18)),
+                      //
                     ]),
               ),
               flex: 10,),
