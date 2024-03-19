@@ -24,7 +24,10 @@ class _AuthorizationState extends State<Authorization> {
           children: [
             CupertinoSwitch(value: brightness == Brightness.dark, onChanged: (value){
               context.read<ThemeCubit>().SetThemeBrightness(value ? Brightness.dark : Brightness.light);
-            })
+            }),
+            TextButton(onPressed: (){
+              Navigator.of(context).pushNamed('/Test');
+            }, child: Text('NextPage'))
           ],
         ),
       ),
