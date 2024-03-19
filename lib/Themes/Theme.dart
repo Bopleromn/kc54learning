@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
   final lightTheme = ThemeData(
-    primaryColor: Colors.blueAccent,
+    primaryColor: Colors.blue,
     shadowColor: Colors.grey.withOpacity(0.5),
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.light(primary: Colors.blueAccent),

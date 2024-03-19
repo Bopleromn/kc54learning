@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kc54learning/Models/StaticUserModel.dart';
 import 'package:kc54learning/Models/UserModel.dart';
+import 'package:kc54learning/Themes/TextFieldStyles.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -45,27 +46,10 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: Text('Это сохранит ваш прогресс', style: textTheme.titleMedium), flex: 5,),
               Expanded(child: Container(), flex: 1,),
               Expanded(child: Container(
-                   decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 7,
-                      color: colors.shadowColor,
-                      spreadRadius: 5,
-                      offset: Offset(0, 4)
-                    )
-                  ]
-                ),
+                decoration: shadowBorder(colors.shadowColor),
                 child: TextField(
                   controller: _emailController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    fillColor: Colors.white,
-                    filled: true,
-                    hintText: 'Адрес электронной почты',
-                  ),
+                  decoration: fieldBorder('Адресс электронной почты'),
                 ),
               ), flex: 10,),
               Expanded(child: Container(), flex: 1,),
@@ -74,12 +58,7 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: ElevatedButton(
                 onPressed: acceptmail,
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  backgroundColor: Colors.blue,
-                ),
+                style: mainButton(colors.primaryColor),
               ), flex: 7,),
               Expanded(child: Container(), flex: 3,),
               Expanded(child: Text('Или войти через', style: TextStyle(fontSize: 20)), flex: 7,),
