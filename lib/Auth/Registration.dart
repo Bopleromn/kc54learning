@@ -17,6 +17,7 @@ class _RegistrationState extends State<Registration> {
             Expanded(child: Container(), flex: 5,),
             Expanded(child: Image.asset('assets/backgroundAuthorization.png'), flex: 10,),
             Expanded(child: Container(), flex: 50,),
+            //
           ],
         ),
       )
