@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
+import 'package:kc54learning/Auth/Registration.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/bloc/auth_success_bloc.dart';
 import 'package:kc54learning/Themes/Theme.dart';
@@ -31,9 +32,10 @@ class MyApp extends StatelessWidget {
             theme: state.brightness == Brightness.dark ? darkTheme : lightTheme,
             routes: {
               '/Authorization': (context) => Authorization(),
+              '/Registration': (context) => Registration(),
               '/Test':(context) => AuthorizationSucces()
               },
-            initialRoute: '/Authorization',
+            initialRoute: '/Registration',
           );
         },
       ),
