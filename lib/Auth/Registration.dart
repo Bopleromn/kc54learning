@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Registration extends StatefulWidget {
@@ -24,7 +28,7 @@ class _RegistrationState extends State<Registration> {
                 ]
             ),
           ),
-          padding: EdgeInsets.fromLTRB(75, 0, 75, 0),
+          padding: EdgeInsets.fromLTRB(75, 15, 75, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -46,7 +50,7 @@ class _RegistrationState extends State<Registration> {
               ), flex: 10,),
               Expanded(child: Container(), flex: 1,),
               Expanded(child: Text('Номер телефона', style: TextStyle(fontSize: 20, color: Colors.blue)), flex: 5,),
-              Expanded(child: Container(), flex: 2,),
+              Expanded(child: Container(), flex: 3,),
               Expanded(child: ElevatedButton(
                 onPressed: (){},
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
@@ -57,9 +61,29 @@ class _RegistrationState extends State<Registration> {
                   backgroundColor: Colors.blue,
                 ),
               ), flex: 7,),
-              Expanded(child: Container(), flex: 50,),
-              //
-
+              Expanded(child: Container(), flex: 3,),
+              Expanded(child: Text('Или войти через', style: TextStyle(fontSize: 20)), flex: 7,),
+              Expanded(child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Image.asset('assets/gosuslugi.png',),
+                    Image.asset('assets/google.png',),
+                    Image.asset('assets/vk.png',),
+                    Image.asset('assets/yandex.png',),
+                  ],
+                ),
+                flex: 10,
+              ),
+              Expanded(child: Container(), flex: 3,),
+              Expanded(child: RichText(
+                text: TextSpan(
+                    children: [
+                      TextSpan(text: 'Регистрируясь, вы соглашаетесь с ', style: TextStyle(color: Colors.black, fontSize: 18)),
+                      TextSpan(text: 'политикой конфиденциальности', style: TextStyle(color: Colors.blue, fontSize: 18)),
+                    ]),
+              ),
+              flex: 10,),
+              Expanded(child: Container(), flex: 10,),
             ],
           ),
         )
