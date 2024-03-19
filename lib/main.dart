@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
+import 'package:kc54learning/Auth/f.dart';
+import 'package:kc54learning/Themes/Theme.dart';
+import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,18 +14,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        )
+      ],
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: state.brightness == Brightness.dark ? darkTheme : lightTheme,
+            routes: {
+              '/Authorization': (context) => Authorization(),
+              '/Test':(context) => Test()
+              },
+            initialRoute: '/Test',
+          );
+        },
       ),
-      routes: {
-        '/Authorization':(context) => Authorization()
-      },
-      initialRoute: '/Authorization',
     );
   }
 }
-
