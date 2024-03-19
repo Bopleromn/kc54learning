@@ -26,7 +26,7 @@ class _RegistrationState extends State<Registration> {
           ),
           padding: EdgeInsets.fromLTRB(75, 0, 75, 0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(child: Container(), flex: 5,),
               Center(child:  Expanded(child: SvgPicture.asset('assets/SPARKS.svg'), flex: 10,),),
@@ -49,13 +49,14 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: Container(), flex: 2,),
               Expanded(child: ElevatedButton(
                 onPressed: (){},
-                child: Text('Создать аккаунт'),
+                child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
-                  )
+                  ),
+                  backgroundColor: Colors.blue,
                 ),
-              ), flex: 5,),
+              ), flex: 7,),
               Expanded(child: Container(), flex: 50,),
               //
 
