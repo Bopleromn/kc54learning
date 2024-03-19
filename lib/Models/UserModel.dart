@@ -5,6 +5,7 @@ class UserModel{
     this.email = email;
     this.password = password;
   }
+  UserModel.empty(){}
 
   UserModel.full(String email, String password, String name){
     this.email = email;
@@ -17,7 +18,7 @@ class UserModel{
   String? password;
   String? name;
 
-  Future<bool> checkIfExists() async{
+  Future<bool> authorization() async{
     final response = await Dio().get(
         'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
     );
@@ -51,5 +52,18 @@ class UserModel{
     final jsonResponse = response.data as Map<String,dynamic>;
 
     return jsonResponse['success'];
+  }
+  Future<bool> checkMail() async{
+    final response = await Dio().get(
+      'http://83.147.245.57/send_vc?email=${this.email}'
+    );
+    final json = response.data as Map<String, dynamic>;
+    
+    if(!json['success']){
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 }

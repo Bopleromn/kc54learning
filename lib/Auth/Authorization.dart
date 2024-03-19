@@ -22,7 +22,7 @@ class _AuthorizationState extends State<Authorization> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CupertinoSwitch(value: brightness == Brightness.dark, onChanged: (value){
+            CupertinoSwitch(value: brightness == Brightness.light, onChanged: (value){
               context.read<ThemeCubit>().SetThemeBrightness(value ? Brightness.dark : Brightness.light);
             }),
             TextButton(onPressed: (){

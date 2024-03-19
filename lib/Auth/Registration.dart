@@ -1,20 +1,26 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kc54learning/Models/StaticUserModel.dart';
+import 'package:kc54learning/Models/UserModel.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
-
   @override
   State<Registration> createState() => _RegistrationState();
 }
 
 class _RegistrationState extends State<Registration> {
+    TextEditingController _emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colors = Theme.of(context);
     return Scaffold(
       body: Center(
         child: Container(
@@ -35,26 +41,25 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: Container(), flex: 15,),
               Center(child:  Expanded(child: SvgPicture.asset('assets/SPARKS.svg'), flex: 10,),),
               Expanded(child: Container(), flex: 10,),
-              Expanded(child: Text('Вход', style: Theme.of(context).textTheme.titleLarge), flex: 7,),
-              Expanded(child: Text('Это сохранит ваш прогресс', style: Theme.of(context).textTheme.titleMedium), flex: 5,),
+              Expanded(child: Text('Вход', style: textTheme.titleLarge), flex: 7,),
+              Expanded(child: Text('Это сохранит ваш прогресс', style: textTheme.titleMedium), flex: 5,),
               Expanded(child: Container(), flex: 1,),
               Expanded(child: Container(
                    decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
                       blurRadius: 7,
+                      color: colors.shadowColor,
                       spreadRadius: 5,
                       offset: Offset(0, 4)
                     )
                   ]
                 ),
                 child: TextField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                      ),
+                      borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     fillColor: Colors.white,
@@ -64,10 +69,10 @@ class _RegistrationState extends State<Registration> {
                 ),
               ), flex: 10,),
               Expanded(child: Container(), flex: 1,),
-              Expanded(child: Text('Номер телефона', style: TextStyle(fontSize: 20, color: Colors.blue)), flex: 5,),
+              Expanded(child: Text('Номер телефона', style: textTheme.displayMedium,), flex: 5,),
               Expanded(child: Container(), flex: 2,),
               Expanded(child: ElevatedButton(
-                onPressed: (){},
+                onPressed: acceptmail,
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -84,7 +89,6 @@ class _RegistrationState extends State<Registration> {
                     Image.asset('assets/gosuslugi.png',),
                     Image.asset('assets/google.png',),
                     Image.asset('assets/vk.png',),
-                    Image.asset('assets/yandex.png',),
                   ],
                 ),
                 flex: 10,
@@ -104,5 +108,20 @@ class _RegistrationState extends State<Registration> {
         )
       )
     );
+  }
+  Future<void> acceptmail() async{
+    final regex = RegExp(r"(^[\w]+@[A-Za-z]{2,10}.[A-Za-z]{2,7}$)");
+    if(regex.hasMatch(_emailController.text.toString())){
+      StaticUserModel.userModel.email = _emailController.text.toString();
+      if(await StaticUserModel.userModel.checkMail() == true){
+        Navigator.of(context).pushNamed('/OTP');
+      }
+      else{
+        print('Не вышло');
+      }
+    }
+    else{
+      print('dsadsadsa');
+    }
   }
 }
