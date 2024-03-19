@@ -18,6 +18,8 @@ dependencies:
   flutter_bloc: ^8.1.4
   equatable: ^2.0.5
   dio: ^5.4.1
+  code_text_field: ^1.0.2
+  flutter_highlight: ^0.7.0
 
 dev_dependencies:
   flutter_test:

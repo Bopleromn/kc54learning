@@ -18,6 +18,7 @@ class _RegistrationState extends State<Registration> {
     return Scaffold(
       body: Center(
         child: Container(
+          padding: EdgeInsets.only(left: 30, right: 30),
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -28,29 +29,44 @@ class _RegistrationState extends State<Registration> {
                 ]
             ),
           ),
-          padding: EdgeInsets.fromLTRB(75, 15, 75, 0),
+          padding: EdgeInsets.fromLTRB(75, 0, 75, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(child: Container(), flex: 5,),
+              Expanded(child: Container(), flex: 15,),
               Center(child:  Expanded(child: SvgPicture.asset('assets/SPARKS.svg'), flex: 10,),),
               Expanded(child: Container(), flex: 10,),
-              Expanded(child: Text('Вход', style: TextStyle(fontSize: 35)), flex: 7,),
-              Expanded(child: Text('Это сохранит ваш прогресс', style: TextStyle(fontSize: 20)), flex: 5,),
+              Expanded(child: Text('Вход', style: Theme.of(context).textTheme.titleLarge), flex: 7,),
+              Expanded(child: Text('Это сохранит ваш прогресс', style: Theme.of(context).textTheme.titleMedium), flex: 5,),
               Expanded(child: Container(), flex: 1,),
-              Expanded(child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+              Expanded(child: Container(
+                   decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 7,
+                      spreadRadius: 5,
+                      offset: Offset(0, 4)
+                    )
+                  ]
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    fillColor: Colors.white,
+                    filled: true,
+                    hintText: 'Адрес электронной почты',
                   ),
-                  fillColor: Colors.white,
-                  filled: true,
-                  hintText: 'Адрес электронной почты'
                 ),
               ), flex: 10,),
               Expanded(child: Container(), flex: 1,),
               Expanded(child: Text('Номер телефона', style: TextStyle(fontSize: 20, color: Colors.blue)), flex: 5,),
-              Expanded(child: Container(), flex: 3,),
+              Expanded(child: Container(), flex: 2,),
               Expanded(child: ElevatedButton(
                 onPressed: (){},
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
@@ -80,7 +96,6 @@ class _RegistrationState extends State<Registration> {
                     children: [
                       TextSpan(text: 'Регистрируясь, вы соглашаетесь с ', style: TextStyle(color: Colors.black, fontSize: 18)),
                       TextSpan(text: 'политикой конфиденциальности', style: TextStyle(color: Colors.blue, fontSize: 18)),
-                      //
                     ]),
               ),
               flex: 10,),
