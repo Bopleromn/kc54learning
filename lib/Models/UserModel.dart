@@ -17,6 +17,7 @@ class UserModel{
   String? email;
   String? password;
   String? name;
+  String? verificationCode;
 
   Future<bool> authorization() async{
     final response = await Dio().get(
@@ -53,12 +54,28 @@ class UserModel{
 
     return jsonResponse['success'];
   }
+
   Future<bool> checkMail() async{
     final response = await Dio().get(
       'http://83.147.245.57/send_vc?email=${this.email}'
     );
     final json = response.data as Map<String, dynamic>;
     
+    if(!json['success']){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  Future<bool> checkVerificationCode() async{
+    final response = await Dio().get(
+        'http://83.147.245.57/check_vc?verificationCode=${verificationCode}&email=${email}'
+    );
+
+    final json = response.data as Map<String, dynamic>;
+
     if(!json['success']){
       return false;
     }

@@ -49,7 +49,7 @@ class _RegistrationState extends State<Registration> {
                 decoration: shadowBorder(colors.shadowColor),
                 child: TextField(
                   controller: _emailController,
-                  decoration: fieldBorder('Адресс электронной почты'),
+                  decoration: fieldBorder('Адрес электронной почты'),
                 ),
               ), flex: 10,),
               Expanded(child: Container(), flex: 1,),
