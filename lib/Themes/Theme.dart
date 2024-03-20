@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
     primaryColor: Colors.blue,
     shadowColor: Colors.grey.withOpacity(0.5),
     scaffoldBackgroundColor: Colors.white,
+    bottomAppBarColor: Colors.black,
     colorScheme: ColorScheme.light(primary: Colors.blueAccent),
     textTheme: TextTheme(
       titleLarge: TextStyle(

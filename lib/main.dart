@@ -5,6 +5,7 @@ import 'package:kc54learning/Auth/OTPVerification.dart';
 import 'package:kc54learning/Auth/Registration.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/bloc/auth_success_bloc.dart';
+import 'package:kc54learning/MainMenu/MainMenuPage.dart';
 import 'package:kc54learning/Themes/Theme.dart';
 import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 import 'package:kc54learning/codeEdit/codeEdit.dart';
@@ -37,9 +38,10 @@ class MyApp extends StatelessWidget {
               '/Registration': (context) => Registration(),
               '/Test':(context) => AuthorizationSucces(),
               '/codeEdit':(context) => codeEdit(),
-              '/OTP':(context) => OTPVerification()
+              '/OTP':(context) => OTPVerification(),
+              '/MainMenu':(context) => MainMenuPage()
               },
-            initialRoute: '/Registration',
+            initialRoute: '/MainMenu',
           );
         },
       ),

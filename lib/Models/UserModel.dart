@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:kc54learning/Models/StaticUserModel.dart';
 
 class UserModel{
   UserModel(String email, String password){
@@ -17,6 +18,7 @@ class UserModel{
   String? email;
   String? password;
   String? name;
+  final timestamp = DateTime.timestamp();
   String? verificationCode;
 
   Future<bool> authorization() async{
@@ -82,5 +84,8 @@ class UserModel{
     else{
       return true;
     }
+  }
+  Future<void> sendMessage(String SenderId, message) async{
+    final String? CurrentUserName = StaticUserModel.userModel.name;
   }
 }
