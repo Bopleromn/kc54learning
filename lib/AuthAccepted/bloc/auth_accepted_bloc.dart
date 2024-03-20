@@ -8,7 +8,7 @@ class AuthAcceptedBloc extends Bloc<AuthAcceptedEvent, AuthAcceptedState> {
   AuthAcceptedBloc() : super(AuthAcceptedInitial()) {
     on<AuthAcceptedEvent>((AuthAcceptedEvent, AuthAcceptedState) async{
       emit(AuthAcceptedLoading());
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(Duration(seconds: 4));
       emit(AuthAcceptedLoaded());
     });
   }
