@@ -55,7 +55,7 @@ class _RegistrationState extends State<Registration> {
                   controller: _emailController,
                   decoration: fieldBorder('Адрес электронной почты'),
                 ),
-              ), flex: 10,),
+              ), flex: 8,),
               Expanded(child: Container(), flex: 3,),
               Expanded(child: Container(
                 decoration: shadowBorder(colors.shadowColor),
@@ -63,7 +63,7 @@ class _RegistrationState extends State<Registration> {
                   controller: _nameController,
                   decoration: fieldBorder('Имя'),
                 ),
-              ), flex: 10,),
+              ), flex: 8,),
               Expanded(child: Container(), flex: 3,),
               Expanded(child: Container(
                 decoration: shadowBorder(colors.shadowColor),
@@ -71,7 +71,7 @@ class _RegistrationState extends State<Registration> {
                   controller: _ageController,
                   decoration: fieldBorder('Возраст'),
                 ),
-              ), flex: 10,),
+              ), flex: 8,),
               Expanded(child: Container(), flex: 3,),
               Expanded(child: Container(
                 decoration: shadowBorder(colors.shadowColor),
@@ -79,7 +79,7 @@ class _RegistrationState extends State<Registration> {
                   controller: _passwordController,
                   decoration: fieldBorder('Пароль'),
                 ),
-              ), flex: 10,),
+              ), flex: 8,),
               Expanded(child: Container(), flex: 3,),
               Expanded(child: Container(), flex: 2,),
               Expanded(child: RichText(

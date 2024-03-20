@@ -1,7 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kc54learning/AuthAccepted/bloc/auth_accepted_bloc.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class AuthAccepted extends StatefulWidget {
@@ -12,23 +13,18 @@ class AuthAccepted extends StatefulWidget {
 
 class _AuthAcceptedState extends State<AuthAccepted> {
     @override
-  void initState() {
+    initState() {
     super.initState();
-    final bloccommand = BlocProvider.of<AuthAcceptedBloc>(context);
-    bloccommand.add(AuthAcceptedEvent());
+    sleepfunc();
+  }
+  Future<void> sleepfunc  () async{
+   await Future.delayed(Duration(seconds: 4));
+   Navigator.of(context).pushNamed('/RegistrationSuccess');
   }
   @override
-  Widget build(BuildContext context) { return
-    BlocBuilder<AuthAcceptedBloc, AuthAcceptedState>(
-        builder: (context, state) {
-          if(state is AuthAcceptedLoading){
-          }
-           if(state is AuthAcceptedLoaded){
-           Navigator.of(context).pushNamed('/RegistrationSuccess');
-           setState(() {
-            });
-           }
+  Widget build(BuildContext context) { 
           return Scaffold(
+            backgroundColor: Color(0xffF1F5FF),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +59,6 @@ class _AuthAcceptedState extends State<AuthAccepted> {
               ),
             ),
           );
-        },
-      );
   }
 }
+
