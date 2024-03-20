@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
-import 'package:kc54learning/Auth/MainRegistration.dart';
+import 'package:kc54learning/Registration/MainRegistration.dart';
 import 'package:kc54learning/Auth/OTPVerification.dart';
-import 'package:kc54learning/Auth/Registration.dart';
-import 'package:kc54learning/Auth/RegistrationSuccess.dart';
+import 'package:kc54learning/Registration/Registration.dart';
+import 'package:kc54learning/Registration/RegistrationSuccess.dart';
 import 'package:kc54learning/AuthAccepted/AuthAccepted.dart';
 import 'package:kc54learning/AuthAccepted/bloc/auth_accepted_bloc.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
