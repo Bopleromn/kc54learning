@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
 import 'package:kc54learning/Auth/OTPVerification.dart';
 import 'package:kc54learning/Auth/Registration.dart';
+import 'package:kc54learning/AuthAccepted/AuthAccepted.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/bloc/auth_success_bloc.dart';
 import 'package:kc54learning/Registration/RegistrationBoardGoals.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
               '/RegistrationBoardGoals':(context) => RegistrationBoardGoals(),
               '/RegistrationLevel':(context) => RegistrationLevel(),
               '/RegistrationTime':(context) => RegistrationTime(),
-              '/RegistrationNotify':(context) => RegistrationBoardNotifications()
+              '/RegistrationNotify':(context) => RegistrationBoardNotifications(),
+              '/AuthAccepted':(context) => AuthAccepted()
               },
             initialRoute: '/RegistrationBoardGoals',
           );
