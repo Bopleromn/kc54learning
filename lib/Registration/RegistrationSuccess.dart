@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kc54learning/Auth/Registration.dart';
 import 'package:kc54learning/Themes/TextFieldStyles.dart';
 
 class RegistrationSuccess extends StatefulWidget {
