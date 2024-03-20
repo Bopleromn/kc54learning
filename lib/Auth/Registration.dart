@@ -56,7 +56,7 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: Text('Номер телефона', style: textTheme.displayMedium,), flex: 5,),
               Expanded(child: Container(), flex: 2,),
               Expanded(child: ElevatedButton(
-                onPressed: acceptmail,
+                onPressed: (){Navigator.of(context).pushNamed('/RegistrationBoardGoals');},
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
                 style: mainButton(colors.primaryColor),
               ), flex: 7,),

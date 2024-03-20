@@ -13,28 +13,31 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardGoals> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        foregroundColor: Theme.of(context).primaryColor,
+        flexibleSpace: Expanded(child: Padding(
+          padding: EdgeInsets.fromLTRB(40, 20, 40, 0),
+          child: LinearPercentIndicator(
+          percent: 0.33,
+          linearGradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xffF7AA2D),
+              Color(0xffFFCB1D),
+            ],
+          ),
+          lineHeight: 15.0,
+          barRadius: Radius.circular(10),
+        ),
+        ),
+          flex: 3,
+        ),
       ),
       body: Center(
         child: Container(
               padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
               child: Column(
                 children: [
-                  Expanded(child: LinearPercentIndicator(
-                      percent: 0.33,
-                      linearGradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xffF7AA2D),
-                            Color(0xffFFCB1D),
-                          ],
-                      ),
-                      lineHeight: 15.0,
-                      barRadius: Radius.circular(10),
-                    ),
-                    flex: 3,
-                  ),
                   Expanded(child: Image.asset('assets/mascott.png'), flex: 50,),
                   Expanded(child:
                       Container(
