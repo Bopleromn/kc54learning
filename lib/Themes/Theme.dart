@@ -19,7 +19,7 @@ import 'package:flutter/material.dart';
       titleSmall: TextStyle(
         color: Colors.black,
         fontSize: 14,
-        fontWeight: FontWeight.normal
+        fontWeight: FontWeight.normal,
       ),
       displayLarge: TextStyle(
         color: Colors.blueAccent,
