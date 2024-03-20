@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/AuthAccepted/bloc/auth_accepted_bloc.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class AuthAccepted extends StatefulWidget {
   const AuthAccepted({super.key});
@@ -17,9 +18,10 @@ class _AuthAcceptedState extends State<AuthAccepted> {
       child: BlocBuilder<AuthAcceptedBloc, AuthAcceptedState>(
         builder: (context, state) {
           if(state is AuthAcceptedLoading){
+
           }
           if(state is AuthAcceptedLoaded){
-              Navigator.of(context).pushNamed('');
+            print('asdsda');
           }
           return Scaffold(
               body: Container(
@@ -36,6 +38,23 @@ class _AuthAcceptedState extends State<AuthAccepted> {
               ),
           );
         },
+      ),
+    );
+  }
+}
+
+class CircleWidget extends StatefulWidget{
+  @override
+  State<CircleWidget> createState() => _CircleWidgetState();
+}
+
+class _CircleWidgetState extends State<CircleWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CircularPercentIndicator(
+        radius: 60.0,
+        animation: true,
       ),
     );
   }
