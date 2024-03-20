@@ -4,6 +4,7 @@ import 'package:kc54learning/Auth/Authorization.dart';
 import 'package:kc54learning/Auth/MainRegistration.dart';
 import 'package:kc54learning/Auth/OTPVerification.dart';
 import 'package:kc54learning/Auth/Registration.dart';
+import 'package:kc54learning/Auth/RegistrationSuccess.dart';
 import 'package:kc54learning/AuthAccepted/AuthAccepted.dart';
 import 'package:kc54learning/AuthAccepted/bloc/auth_accepted_bloc.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
               '/RegistrationTime':(context) => RegistrationTime(),
               '/RegistrationNotify':(context) => RegistrationBoardNotifications(),
               '/AuthAccepted':(context) => AuthAccepted(),
-              '/MainRegistration':(context) => MainRegistration()
+              '/MainRegistration':(context) => MainRegistration(),
+              '/RegistrationSuccess':(context) => RegistrationSuccess()
               },
             initialRoute: '/RegistrationNotify',
           );

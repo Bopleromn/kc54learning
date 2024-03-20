@@ -28,6 +28,8 @@ InputDecoration fieldBorder(String hint){
 
 ButtonStyle mainButton(Color color){
   return ElevatedButton.styleFrom(
+    elevation: 8,
+    shadowColor: Colors.grey.withOpacity(0.5),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12),
     ),

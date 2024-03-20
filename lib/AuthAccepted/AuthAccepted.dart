@@ -24,7 +24,7 @@ class _AuthAcceptedState extends State<AuthAccepted> {
           if(state is AuthAcceptedLoading){
           }
            if(state is AuthAcceptedLoaded){
-           Navigator.of(context).pushNamed('/MainRegistration');
+           Navigator.of(context).pushNamed('/RegistrationSuccess');
            setState(() {
             });
            }

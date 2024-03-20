@@ -36,6 +36,11 @@ import 'package:flutter/material.dart';
         fontSize: 14,
         fontWeight: FontWeight.bold 
       ),
+            labelMedium: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold
+      ),
         
       
     )
@@ -76,6 +81,7 @@ import 'package:flutter/material.dart';
         fontSize: 14,
         fontWeight: FontWeight.bold 
       ),
+
         
       
     )
