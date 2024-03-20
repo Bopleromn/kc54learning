@@ -49,8 +49,12 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardNotifications>
                       style: Theme.of(context).textTheme.titleSmall,
                     ),),
                     flex: 20,),
-                  Expanded(child: Image.asset('assets/allowicon.png'), flex: 25,),
-                  Expanded(child: Image.asset('assets/notallow.png'), flex: 25,),
+                  Expanded(child: GestureDetector(onTap: (){
+                    Navigator.of(context).pushNamed('/AuthAccepted');
+                  },child: Image.asset('assets/allowicon.png')), flex: 25,),
+                  Expanded(child: GestureDetector(onTap: (){
+                    Navigator.of(context).pushNamed('/AuthAccepted');
+                  },child: Image.asset('assets/notallow.png')), flex: 25,),
                   Expanded(child: Container(), flex: 35,),
                 ],
               ),

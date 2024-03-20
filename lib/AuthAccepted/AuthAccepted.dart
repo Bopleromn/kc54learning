@@ -18,7 +18,6 @@ class _AuthAcceptedState extends State<AuthAccepted> {
       child: BlocBuilder<AuthAcceptedBloc, AuthAcceptedState>(
         builder: (context, state) {
           if(state is AuthAcceptedLoading){
-
           }
           if(state is AuthAcceptedLoaded){
             print('asdsda');
