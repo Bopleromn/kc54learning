@@ -41,7 +41,7 @@ class _RegistrationState extends State<Registration> {
             children: [
               Expanded(child: Container(), flex: 15,),
               Center(child:  Expanded(child: SvgPicture.asset('assets/SPARKS.svg'), flex: 10,),),
-              Expanded(child: Container(), flex: 10,),
+              Expanded(child: Container(), flex: 3,),
               Expanded(child: Text('Вход', style: textTheme.titleLarge), flex: 7,),
               Expanded(child: Text('Это сохранит ваш прогресс', style: textTheme.titleMedium), flex: 5,),
               Expanded(child: Container(), flex: 1,),
@@ -70,7 +70,7 @@ class _RegistrationState extends State<Registration> {
                     Image.asset('assets/vk.png',),
                   ],
                 ),
-                flex: 10,
+                flex: 8,
               ),
               Expanded(child: Container(), flex: 3,),
               Expanded(child: RichText(
@@ -81,7 +81,7 @@ class _RegistrationState extends State<Registration> {
                     ]),
               ),
               flex: 10,),
-              Expanded(child: Container(), flex: 10,),
+              Expanded(child: Container(), flex: 17,),
             ],
           ),
         )
