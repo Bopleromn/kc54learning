@@ -38,11 +38,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: state.brightness == Brightness.light ? lightTheme : darkTheme,
             routes: {
-              '/Authorization': (context) => Authorization(),
               '/Registration': (context) => Registration(),
-              '/Test':(context) => AuthorizationSucces(),
-              '/codeEdit':(context) => codeEdit(),
-              '/OTP':(context) => OTPVerification(),
               '/RegistrationBoardGoals':(context) => RegistrationBoardGoals(),
               '/RegistrationLevel':(context) => RegistrationLevel(),
               '/RegistrationTime':(context) => RegistrationTime(),
