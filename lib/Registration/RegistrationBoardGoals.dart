@@ -15,9 +15,9 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardGoals> {
       appBar: AppBar(
         foregroundColor: Theme.of(context).primaryColor,
         flexibleSpace: Expanded(child: Padding(
-          padding: EdgeInsets.fromLTRB(40, 20, 40, 0),
+          padding: EdgeInsets.fromLTRB(40, 78, 40, 0),
           child: LinearPercentIndicator(
-          percent: 0.33,
+          percent: 0.25,
           linearGradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -47,10 +47,16 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardGoals> {
                           style: Theme.of(context).textTheme.titleSmall,
                       ),),
                   flex: 20,),
-                  Expanded(child: Image.asset('assets/forworkicon.png'), flex: 50,),
-                  Expanded(child: Image.asset('assets/forlearningicon.png'), flex: 50,),
-                  Expanded(child: Image.asset('assets/formyselficon.png'), flex: 50,),
-                  Expanded(child: Container(), flex: 5,),
+                  Expanded(child: GestureDetector(onTap: (){
+                    Navigator.of(context).pushNamed('/RegistrationLevel');
+                  },child: Image.asset('assets/forworkicon.png')), flex: 40,),
+                  Expanded(child: GestureDetector(onTap: (){
+                    Navigator.of(context).pushNamed('/RegistrationLevel');
+                  },child: Image.asset('assets/forlearningicon.png')), flex: 40,),
+                  Expanded(child: GestureDetector(onTap: (){
+                    Navigator.of(context).pushNamed('/RegistrationLevel');
+                  },child: Image.asset('assets/formyselficon.png')), flex: 40,),
+                  Expanded(child: Container(), flex: 15,),
                 ],
             ),
           )
