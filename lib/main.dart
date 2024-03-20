@@ -6,6 +6,9 @@ import 'package:kc54learning/Auth/Registration.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/bloc/auth_success_bloc.dart';
 import 'package:kc54learning/Registration/RegistrationBoardGoals.dart';
+import 'package:kc54learning/Registration/RegistrationBoardNotifications.dart';
+import 'package:kc54learning/Registration/RegistrationLevel.dart';
+import 'package:kc54learning/Registration/RegistrationTime.dart';
 import 'package:kc54learning/Themes/Theme.dart';
 import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 import 'package:kc54learning/codeEdit/codeEdit.dart';
@@ -40,8 +43,11 @@ class MyApp extends StatelessWidget {
               '/codeEdit':(context) => codeEdit(),
               '/OTP':(context) => OTPVerification(),
               '/RegistrationBoardGoals':(context) => RegistrationBoardGoals(),
+              '/RegistrationLevel':(context) => RegistrationLevel(),
+              '/RegistrationTime':(context) => RegistrationTime(),
+              '/RegistrationNotify':(context) => RegistrationBoardNotifications()
               },
-            initialRoute: '/Registration',
+            initialRoute: '/RegistrationBoardGoals',
           );
         },
       ),

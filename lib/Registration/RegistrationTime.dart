@@ -8,17 +8,18 @@ class RegistrationTime extends StatelessWidget {
   Widget build(BuildContext context) {
     return   Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xffF1F5FF),
         foregroundColor: Theme.of(context).primaryColor,
         flexibleSpace: Expanded(child: Padding(
           padding: EdgeInsets.fromLTRB(40, 78, 40, 0),
           child: LinearPercentIndicator(
-          percent: 0.5,
+          percent: 0.75,
           linearGradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
               Color(0xffF7AA2D),
-              Color(0xfffc7f),
+              Color(0xffADFF2F)
             ],
           ),
           lineHeight: 15.0,
@@ -30,6 +31,7 @@ class RegistrationTime extends StatelessWidget {
       ),
       body: Center(
         child: Container(
+          color: Color(0xffF1F5FF),
               padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: Column(
                 children: [
@@ -43,13 +45,13 @@ class RegistrationTime extends StatelessWidget {
                       ),),
                   flex: 15,),
                   Expanded(child: GestureDetector(onTap: (){
-                    Navigator.of(context).pushNamed('/');
+                    Navigator.of(context).pushNamed('/RegistrationNotify');
                   },child: Image.asset('assets/30Min.png')), flex: 38,),
                   Expanded(child: GestureDetector(onTap: (){
-                    Navigator.of(context).pushNamed('/');
+                    Navigator.of(context).pushNamed('/RegistrationNotify');
                   },child: Image.asset('assets/45Min.png')), flex: 38,),
                   Expanded(child: GestureDetector(onTap: (){
-                    Navigator.of(context).pushNamed('/');
+                    Navigator.of(context).pushNamed('/RegistrationNotify');
                   },child: Image.asset('assets/ManyTime.png')), flex: 38,),
                   Expanded(child: Container(),flex: 8,)
 

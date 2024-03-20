@@ -13,6 +13,7 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardGoals> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xffF1F5FF),
         foregroundColor: Theme.of(context).primaryColor,
         flexibleSpace: Expanded(child: Padding(
           padding: EdgeInsets.fromLTRB(40, 78, 40, 0),

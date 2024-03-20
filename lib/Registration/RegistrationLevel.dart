@@ -9,6 +9,7 @@ class RegistrationLevel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xffF1F5FF),
         foregroundColor: Theme.of(context).primaryColor,
         flexibleSpace: Expanded(child: Padding(
           padding: EdgeInsets.fromLTRB(40, 78, 40, 0),
@@ -19,7 +20,7 @@ class RegistrationLevel extends StatelessWidget {
             end: Alignment.centerRight,
             colors: [
               Color(0xffF7AA2D),
-              Color(0xfffc7f),
+              Color(0xffFFCB1D),
             ],
           ),
           lineHeight: 15.0,
@@ -31,6 +32,7 @@ class RegistrationLevel extends StatelessWidget {
       ),
       body: Center(
         child: Container(
+              color: Color(0xffF1F5FF),
               padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: Column(
                 children: [

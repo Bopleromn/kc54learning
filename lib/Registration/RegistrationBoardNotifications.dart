@@ -13,17 +13,18 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardNotifications>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xffF1F5FF),
           foregroundColor: Theme.of(context).primaryColor,
           flexibleSpace: Expanded(child: Padding(
-            padding: EdgeInsets.fromLTRB(40, 20, 40, 0),
+            padding: EdgeInsets.fromLTRB(40, 78, 40, 0),
             child: LinearPercentIndicator(
-              percent: 0.33,
+              percent: 1,
               linearGradient: LinearGradient(
-                begin: Alignment.topCenter,
+                begin: Alignment.bottomLeft,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xffF7AA2D),
                   Color(0xffFFCB1D),
+                  Color(0xffADFF2F)
                 ],
               ),
               lineHeight: 15.0,
@@ -48,8 +49,8 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardNotifications>
                       style: Theme.of(context).textTheme.titleSmall,
                     ),),
                     flex: 20,),
-                  Expanded(child: Image.asset('assets/allowicon.png'), flex: 30,),
-                  Expanded(child: Image.asset('assets/notallowicon.png'), flex: 30,),
+                  Expanded(child: Image.asset('assets/allowicon.png'), flex: 25,),
+                  Expanded(child: Image.asset('assets/notallow.png'), flex: 25,),
                   Expanded(child: Container(), flex: 35,),
                 ],
               ),
