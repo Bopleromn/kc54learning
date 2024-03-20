@@ -59,6 +59,7 @@ class UserModel{
     final response = await Dio().get(
       'http://83.147.245.57/send_vc?email=${this.email}'
     );
+
     final json = response.data as Map<String, dynamic>;
     
     if(!json['success']){
@@ -71,7 +72,7 @@ class UserModel{
 
   Future<bool> checkVerificationCode() async{
     final response = await Dio().get(
-        'http://83.147.245.57/check_vc?verificationCode=${verificationCode}&email=${email}'
+      'http://83.147.245.57/check_vc?verificationCode=${verificationCode}&email=${email}'
     );
 
     final json = response.data as Map<String, dynamic>;
