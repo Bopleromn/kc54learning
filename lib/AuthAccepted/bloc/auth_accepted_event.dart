@@ -1,6 +1,6 @@
 part of 'auth_accepted_bloc.dart';
 
-sealed class AuthAcceptedEvent extends Equatable {
+class AuthAcceptedEvent extends Equatable {
   const AuthAcceptedEvent();
 
   @override

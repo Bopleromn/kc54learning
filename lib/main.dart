@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
               '/RegistrationNotify':(context) => RegistrationBoardNotifications(),
               '/AuthAccepted':(context) => AuthAccepted()
               },
-            initialRoute: '/AuthAccepted',
+            initialRoute: '/Registration',
           );
         },
       ),

@@ -20,7 +20,7 @@ class _codeEditState extends State<codeEdit> {
     // Instantiate the CodeController
     _codeController = CodeController(
       text: source,
-      language: cpp,
+      language: dart,
     );
 
     return Scaffold(

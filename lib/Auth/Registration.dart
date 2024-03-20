@@ -56,7 +56,7 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: Text('Номер телефона', style: textTheme.displayMedium,), flex: 5,),
               Expanded(child: Container(), flex: 2,),
               Expanded(child: ElevatedButton(
-                onPressed: (){Navigator.of(context).pushNamed('/RegistrationBoardGoals');},
+                onPressed: acceptmail,
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
                 style: mainButton(colors.primaryColor),
               ), flex: 7,),
@@ -94,7 +94,7 @@ class _RegistrationState extends State<Registration> {
     if(regex.hasMatch(_emailController.text.toString())){
       StaticUserModel.userModel.email = _emailController.text.toString();
       if(await StaticUserModel.userModel.checkMail() == true){
-        Navigator.of(context).pushNamed('/OTP');
+        Navigator.of(context).pushNamed('/RegistrationBoardGoals');
       }
       else{
         print('Не вышло');

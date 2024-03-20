@@ -17,21 +17,26 @@ class _AuthAcceptedState extends State<AuthAccepted> {
       create: (context) => AuthAcceptedBloc(),
       child: BlocBuilder<AuthAcceptedBloc, AuthAcceptedState>(
         builder: (context, state) {
+          final bloccommand = BlocProvider.of<AuthAcceptedBloc>(context);
           if(state is AuthAcceptedLoading){
+            widgetCircularIndicator();
           }
           if(state is AuthAcceptedLoaded){
             print('asdsda');
           }
           return Scaffold(
               body: Container(
-                
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(child: Container(),flex: 20,),
-                    Expanded(child: Container(),flex: 30,),
+                    Expanded(child: Container(
+                      child:  widgetCircularIndicator(),
+                    ),flex: 30,),
                     Expanded(child: Container(),flex: 20,),
-                    Expanded(child: Container(),flex: 30,)
+                    Expanded(child: TextButton(onPressed: (){
+                      bloccommand.add(AuthAcceptedEvent());
+                    }, child: Text('dsasddsad'),),flex: 30,)
                   ],
                 ),
               ),
@@ -42,19 +47,13 @@ class _AuthAcceptedState extends State<AuthAccepted> {
   }
 }
 
-class CircleWidget extends StatefulWidget{
-  @override
-  State<CircleWidget> createState() => _CircleWidgetState();
-}
+class widgetCircularIndicator extends StatelessWidget {
+  const widgetCircularIndicator({
+    super.key,
+  });
 
-class _CircleWidgetState extends State<CircleWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CircularPercentIndicator(
-        radius: 60.0,
-        animation: true,
-      ),
-    );
+    return CircularPercentIndicator(radius: 60, animation: true,animationDuration: 10000,);
   }
 }
