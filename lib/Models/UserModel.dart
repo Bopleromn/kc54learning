@@ -1,22 +1,11 @@
 import 'package:dio/dio.dart';
 
 class UserModel{
-  UserModel(String email, String password){
-    this.email = email;
-    this.password = password;
-  }
-  UserModel.empty(){}
-
-  UserModel.full(String email, String password, String name){
-    this.email = email;
-    this.password = password;
-    this.name = name;
-  }
-
   int? id;
   String? email;
   String? password;
   String? name;
+  int? age;
   String? verificationCode;
 
   Future<bool> authorization() async{
@@ -34,6 +23,7 @@ class UserModel{
     this.email = json['data']['Email'];
     this.password = json['data']['Password'];
     this.name = json['data']['Name'];
+    this.age = json['data']['Age'];
 
     return true;
   }
@@ -45,6 +35,7 @@ class UserModel{
     json['Email'] = this.email!;
     json['Password'] = this.password!;
     json['Name'] = this.name!;
+    json['Age'] = this.age!;
 
     final response = await Dio().post(
         'http://83.147.245.57/user_add', data: json

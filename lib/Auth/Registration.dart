@@ -17,7 +17,12 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-    TextEditingController _emailController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneNumberController = TextEditingController();
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _ageController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -42,8 +47,7 @@ class _RegistrationState extends State<Registration> {
               Expanded(child: Container(), flex: 15,),
               Center(child:  Expanded(child: SvgPicture.asset('assets/SPARKS.svg'), flex: 10,),),
               Expanded(child: Container(), flex: 3,),
-              Expanded(child: Text('Вход', style: textTheme.titleLarge), flex: 7,),
-              Expanded(child: Text('Это сохранит ваш прогресс', style: textTheme.titleMedium), flex: 5,),
+              Expanded(child: Text('Регистрация', style: textTheme.titleLarge), flex: 7,),
               Expanded(child: Container(), flex: 1,),
               Expanded(child: Container(
                 decoration: shadowBorder(colors.shadowColor),
@@ -52,27 +56,32 @@ class _RegistrationState extends State<Registration> {
                   decoration: fieldBorder('Адрес электронной почты'),
                 ),
               ), flex: 10,),
-              Expanded(child: Container(), flex: 1,),
-              Expanded(child: Text('Номер телефона', style: textTheme.displayMedium,), flex: 5,),
-              Expanded(child: Container(), flex: 2,),
-              Expanded(child: ElevatedButton(
-                onPressed: acceptmail,
-                child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
-                style: mainButton(colors.primaryColor),
-              ), flex: 7,),
               Expanded(child: Container(), flex: 3,),
-              Expanded(child: Text('Или войти через', style: TextStyle(fontSize: 20)), flex: 7,),
-              Expanded(child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Image.asset('assets/gosuslugi.png',),
-                    Image.asset('assets/google.png',),
-                    Image.asset('assets/vk.png',),
-                  ],
+              Expanded(child: Container(
+                decoration: shadowBorder(colors.shadowColor),
+                child: TextField(
+                  controller: _nameController,
+                  decoration: fieldBorder('Имя'),
                 ),
-                flex: 8,
-              ),
+              ), flex: 10,),
               Expanded(child: Container(), flex: 3,),
+              Expanded(child: Container(
+                decoration: shadowBorder(colors.shadowColor),
+                child: TextField(
+                  controller: _ageController,
+                  decoration: fieldBorder('Возраст'),
+                ),
+              ), flex: 10,),
+              Expanded(child: Container(), flex: 3,),
+              Expanded(child: Container(
+                decoration: shadowBorder(colors.shadowColor),
+                child: TextField(
+                  controller: _passwordController,
+                  decoration: fieldBorder('Пароль'),
+                ),
+              ), flex: 10,),
+              Expanded(child: Container(), flex: 3,),
+              Expanded(child: Container(), flex: 2,),
               Expanded(child: RichText(
                 text: TextSpan(
                     children: [
@@ -82,7 +91,12 @@ class _RegistrationState extends State<Registration> {
                     ]),
               ),
               flex: 10,),
-              Expanded(child: Container(), flex: 17,),
+              Expanded(child: ElevatedButton(
+                onPressed: (){Navigator.of(context).pushNamed('/RegistrationBoardGoals');},
+                child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
+                style: mainButton(colors.primaryColor),
+              ), flex: 7,),
+              Expanded(child: Container(), flex: 5,),
             ],
           ),
         )
@@ -91,17 +105,19 @@ class _RegistrationState extends State<Registration> {
   }
   Future<void> acceptmail() async{
     final regex = RegExp(r"(^[\w]+@[A-Za-z]{2,10}.[A-Za-z]{2,7}$)");
-    if(regex.hasMatch(_emailController.text.toString())){
+    if(regex.hasMatch(_emailController.text.toString()) && _phoneNumberController.text.toString().length > 8 &&
+        _nameController.text.toString().length > 3 && _ageController.text.toString().length > 0 && _passwordController.text.toString().length > 5){
       StaticUserModel.userModel.email = _emailController.text.toString();
+      StaticUserModel.userModel.name = _emailController.text.toString();
+      StaticUserModel.userModel.age = int.parse(_ageController.text.toString());
+      StaticUserModel.userModel.password = _passwordController.text.toString();
+
       if(await StaticUserModel.userModel.checkMail() == true){
-        Navigator.of(context).pushNamed('/RegistrationBoardGoals');
+        print('Регистрация начата');
       }
       else{
-        print('Не вышло');
+        print('Регистрация не начата');
       }
-    }
-    else{
-      print('dsadsadsa');
     }
   }
 }
