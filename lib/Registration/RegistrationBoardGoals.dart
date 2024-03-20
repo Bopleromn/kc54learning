@@ -35,6 +35,7 @@ class _RegistrationBoardGoalsState extends State<RegistrationBoardGoals> {
       ),
       body: Center(
         child: Container(
+              color: Color(0xffF1F5FF),
               padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
               child: Column(
                 children: [
