@@ -92,7 +92,7 @@ class _RegistrationState extends State<Registration> {
               ),
               flex: 10,),
               Expanded(child: ElevatedButton(
-                onPressed: (){Navigator.of(context).pushNamed('/RegistrationBoardGoals');},
+                onPressed: acceptmail,
                 child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
                 style: mainButton(colors.primaryColor),
               ), flex: 7,),
@@ -105,7 +105,7 @@ class _RegistrationState extends State<Registration> {
   }
   Future<void> acceptmail() async{
     final regex = RegExp(r"(^[\w]+@[A-Za-z]{2,10}.[A-Za-z]{2,7}$)");
-    if(regex.hasMatch(_emailController.text.toString()) && _phoneNumberController.text.toString().length > 8 &&
+    if(regex.hasMatch(_emailController.text.toString()) &&
         _nameController.text.toString().length > 3 && _ageController.text.toString().length > 0 && _passwordController.text.toString().length > 5){
       StaticUserModel.userModel.email = _emailController.text.toString();
       StaticUserModel.userModel.name = _emailController.text.toString();
@@ -113,11 +113,31 @@ class _RegistrationState extends State<Registration> {
       StaticUserModel.userModel.password = _passwordController.text.toString();
 
       if(await StaticUserModel.userModel.checkMail() == true){
-        print('Регистрация начата');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Код отправлен вам на почту'),
+            backgroundColor: Colors.grey,
+          ),
+        );
+
+        Navigator.of(context).pushNamed('/OtpVerification');
       }
       else{
-        print('Регистрация не начата');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Не получилось отправить код на почту'),
+            backgroundColor: Colors.grey,
+          ),
+        );
       }
+    }
+    else{
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Не все поля заполнены или введены корректно'),
+          backgroundColor: Colors.grey,
+        ),
+      );
     }
   }
 }

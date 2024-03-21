@@ -82,14 +82,17 @@ class _AuthorizationState extends State<Authorization> {
                   ),
                   Expanded(child: Container(), flex: 3,),
                   Expanded(child: Center(child:
-                  RichText(
-                    text: TextSpan(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          TextSpan(text: 'Нет аккаунта? ', style: TextStyle(color: Colors.black, fontSize: 18)),
-                          TextSpan(text: 'Зарегистрируйтесь', style: TextStyle(color: Colors.blue, fontSize: 18)),
-                          //
-                        ]),
-                  ),
+                          Text('Нет аккаунта?', style: TextStyle(color: Colors.black, fontSize: 18)),
+                          TextButton(onPressed: (){
+                            Navigator.of(context).pushNamed('/Registration');
+                          }, child:
+                            Text('Зарегистрируйтесь', style: TextStyle(color: Colors.blue, fontSize: 18)),
+                          ),
+                        ],
+                      )
                   ),
                     flex: 10,),
                   Expanded(child: Container(), flex: 10,),
@@ -104,10 +107,22 @@ class _AuthorizationState extends State<Authorization> {
     StaticUserModel.userModel.password = _passwordController.text.toString();
 
     if(await StaticUserModel.userModel.authorization() == true){
-      print('Вход выполнен');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Вход выполнен'),
+          backgroundColor: Colors.grey,
+        ),
+      );
+
+      Navigator.of(context).pushNamed('/Main');
     }
     else{
-      print('Не вышло');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text('Неверный логин или пароль'),
+            backgroundColor: Colors.grey,
+        ),
+      );
     }
   }
 }
