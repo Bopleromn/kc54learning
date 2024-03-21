@@ -26,7 +26,9 @@ class _CategoriesState extends State<Categories> {
             itemBuilder: _buildListItem,
             itemCount: categories.length,
             itemSize: double.parse(categories.length.toString()),
-            onItemFocus: (index){},
+            onItemFocus: (index){
+              print(index);
+            },
             initialIndex: 1,
             dynamicItemSize: true,
           ), flex: 15,),

@@ -51,7 +51,6 @@ class MyApp extends StatelessWidget {
               '/RegistrationNotify':(context) => RegistrationBoardNotifications(),
               '/AuthAccepted':(context) => AuthAccepted(),
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
-              '/Main':(context) => Main(),
               '/Categories':(context) => Categories(),
               },
             initialRoute: '/Categories',
