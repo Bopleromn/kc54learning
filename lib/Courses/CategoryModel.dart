@@ -10,4 +10,6 @@ class CategoryModel{
     required this.title,
     required this.photo,
   });
+
+
 }

@@ -15,7 +15,7 @@ import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 import 'package:kc54learning/codeEdit/codeEdit.dart';
 
 import 'AuthAccepted.dart';
-import 'Main/Main.dart';
+import 'Main/MainPage.dart';
 import 'Registration/OtpVerification.dart';
 
 void main() {
@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
               '/RegistrationNotify':(context) => RegistrationBoardNotifications(),
               '/AuthAccepted':(context) => AuthAccepted(),
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
+              '/MainPage':(context) => MainPage(),
               '/Categories':(context) => Categories(),
               },
             initialRoute: '/Categories',
