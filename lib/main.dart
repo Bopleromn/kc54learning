@@ -54,9 +54,8 @@ class MyApp extends StatelessWidget {
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
               '/MainPage':(context) => MainPage(),
               '/Categories':(context) => Categories(),
-              '/TeacherPanel':(context) => TeacherTitle()
               },
-            initialRoute: '/TeacherPanel',
+            initialRoute: '/Categories',
           );
         },
       ),

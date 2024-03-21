@@ -22,7 +22,6 @@ dependencies:
   flutter_highlight: ^0.7.0
   percent_indicator: ^4.2.3
   curved_navigation_bar: ^1.0.3
-  youtube_player_flutter: ^9.0.0
 
 dev_dependencies:
   flutter_test:
