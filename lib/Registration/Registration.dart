@@ -28,6 +28,7 @@ class _RegistrationState extends State<Registration> {
     final textTheme = Theme.of(context).textTheme;
     final colors = Theme.of(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Container(
           padding: EdgeInsets.only(left: 30, right: 30),

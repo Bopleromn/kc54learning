@@ -30,6 +30,7 @@ class _OtpVerificationState extends State<OtpVerification> {
     final textTheme = Theme.of(context).textTheme;
     final colors = Theme.of(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: Center(
             child: Container(
               padding: EdgeInsets.only(left: 30, right: 30),
@@ -49,7 +50,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                   Expanded(child: Container(), flex: 15,),
                   Center(child:  Expanded(child: SvgPicture.asset('assets/SPARKS.svg'), flex: 10,),),
                   Expanded(child: Container(), flex: 3,),
-                  Expanded(child: Text('Код отправлен на вашу почту', style: textTheme.titleLarge), flex: 7,),
+                  Expanded(child: Text('Код отправлен на вашу почту', style: textTheme.titleLarge), flex: 9,),
                   Expanded(child: Container(), flex: 1,),
                   Expanded(child: Text('Введите код', style: textTheme.titleMedium), flex: 7,),
                   Expanded(child: Container(), flex: 3,),
