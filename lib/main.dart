@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
+import 'package:kc54learning/AuthAccepted.dart';
 import 'package:kc54learning/Registration/Registration.dart';
 import 'package:kc54learning/Registration/RegistrationSuccess.dart';
-import 'package:kc54learning/AuthAccepted/AuthAccepted.dart';
-import 'package:kc54learning/AuthAccepted/bloc/auth_accepted_bloc.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/bloc/auth_success_bloc.dart';
 import 'package:kc54learning/Registration/RegistrationBoardGoals.dart';
@@ -35,7 +34,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthSuccessBloc(),
         ),
-        BlocProvider(create: (context) => AuthAcceptedBloc()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
@@ -52,9 +50,9 @@ class MyApp extends StatelessWidget {
               '/RegistrationNotify':(context) => RegistrationBoardNotifications(),
               '/AuthAccepted':(context) => AuthAccepted(),
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
-              '/Main':(context) => Main(),
+              '/Main':(context) => MainPage(),
               },
-            initialRoute: '/Authorization',
+            initialRoute: '/Main',
           );
         },
       ),
