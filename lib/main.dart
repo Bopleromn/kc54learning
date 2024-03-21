@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
 import 'package:kc54learning/Courses/Categories.dart';
+import 'package:kc54learning/Courses/TeacherTitle.dart';
 import 'package:kc54learning/Registration/Registration.dart';
 import 'package:kc54learning/Registration/RegistrationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';

@@ -6,6 +6,11 @@ import 'package:flutter/material.dart';
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.light(primary: Colors.blueAccent),
     textTheme: TextTheme(
+      headlineMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: Colors.white
+      ),
       titleLarge: TextStyle(
         color: Colors.black,
         fontSize: 28,
@@ -37,9 +42,9 @@ import 'package:flutter/material.dart';
         fontWeight: FontWeight.bold 
       ),
             labelMedium: TextStyle(
-        color: Colors.white,
+        color: Colors.grey,
         fontSize: 20,
-        fontWeight: FontWeight.bold
+        fontWeight: FontWeight.w400
       ),
         
       
@@ -81,7 +86,16 @@ import 'package:flutter/material.dart';
         fontSize: 14,
         fontWeight: FontWeight.bold 
       ),
-
+        labelMedium: TextStyle(
+        color: Colors.grey,
+        fontSize: 20,
+        fontWeight: FontWeight.bold
+      ),
+            headlineMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: Colors.white
+      ),
         
       
     )
