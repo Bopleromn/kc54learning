@@ -17,6 +17,8 @@ class _CategoriesState extends State<Categories> {
     fillList();
   }
 
+  //
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
