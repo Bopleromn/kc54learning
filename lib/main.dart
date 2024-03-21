@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
               '/Main':(context) => MainPage(),
               },
-            initialRoute: '/Main',
+            initialRoute: '/Registration',
           );
         },
       ),
