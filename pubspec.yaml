@@ -21,6 +21,7 @@ dependencies:
   code_text_field: ^1.0.2
   flutter_highlight: ^0.7.0
   percent_indicator: ^4.2.3
+  scroll_snap_list: ^0.9.1
 
 dev_dependencies:
   flutter_test:
