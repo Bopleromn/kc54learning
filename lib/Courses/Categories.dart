@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kc54learning/Courses/CategoriesModel.dart';
 import 'package:kc54learning/Courses/CategoryModel.dart';
 
 class Categories extends StatefulWidget{
@@ -10,11 +11,11 @@ class Categories extends StatefulWidget{
 class _CategoriesState extends State<Categories> {
   int _index = 0;
 
-  List<CategoryModel> categories = [
-    CategoryModel(id: 1, title: 'Dart', photo: 'assets/python.png'),
-    CategoryModel(id: 1, title: 'Dart', photo: 'assets/python.png'),
-    CategoryModel(id: 1, title: 'Dart', photo: 'assets/python.png'),
-  ];
+  List<CategoryModel> categories = [];
+
+  _CategoriesState(){
+    fillList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class _CategoriesState extends State<Categories> {
           child: Column(
            children: [
              Padding(padding: EdgeInsets.all(30), child:
-                Image.asset(category.photo, fit: BoxFit.fitHeight,),
+                Image.network(category.photo, fit: BoxFit.fitHeight,),
              ),
              Text(category.title, style: Theme.of(context).textTheme.titleMedium,),
            ],
@@ -56,5 +57,12 @@ class _CategoriesState extends State<Categories> {
           ),
        ),
    );
+  }
+
+  void fillList() async{
+    categories = await CategoriesModel.getCategories();
+    setState(() {
+      categories;
+    });
   }
 }
