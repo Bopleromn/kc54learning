@@ -14,12 +14,13 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
+      body: PageView( 
+        physics: NeverScrollableScrollPhysics(),
         controller: _pagecontroller,
         children: [
-          Scaffold(),
-          Scaffold(),
           Categories(),
+          Scaffold(),
+          Scaffold(),
           Scaffold()
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kc54learning/Courses/%20VideoPage.dart';
 import 'package:kc54learning/Courses/CoursesModel.dart';
 import 'package:kc54learning/Courses/CategoryModel.dart';
 import 'package:kc54learning/Courses/CourseModel.dart';
@@ -26,9 +27,9 @@ class _CategoriesState extends State<Categories> {
   ];
   
   List<VideoModel> videos = [
-    VideoModel('assets/fluttervideo.png', 'Dart SDK', 'assets/kvarkvar.png', 'Квеквескири В.А.'),
-    VideoModel('assets/robloxvideo.png', 'Создание 3D игр', 'assets/aduskin.png', 'Адышкин С.С.'),
-    VideoModel('assets/unityvideo.png', 'Основы Unity', 'assets/chur.png', 'Щур Д.С.'),
+    VideoModel('https://www.youtube.com/watch?v=aj-LGRczt7Q&t=1s','assets/fluttervideo.png', 'Dart SDK', 'assets/kvarkvar.png', 'Квеквескири В.А.'),
+    VideoModel('https://www.youtube.com/watch?v=cfJrtx-k96U','assets/robloxvideo.png', 'Создание 3D игр', 'assets/aduskin.png', 'Адышкин С.С.'),
+    VideoModel('https://www.youtube.com/watch?v=VPvVD8t02U8', 'assets/unityvideo.png', 'Основы Unity', 'assets/chur.png', 'Щур Д.С.'),
   ];
 
   _CategoriesState(){
@@ -137,6 +138,10 @@ class _CategoriesState extends State<Categories> {
       padding: EdgeInsets.all(_indexVideos == index ? 0.0 : 8.0),
       child: GestureDetector(
         onTap: () {
+                     Navigator.push(
+             context,
+             MaterialPageRoute(builder: (context) => VideoPage(video)),
+           );
 
         },
         child: SizedBox(
