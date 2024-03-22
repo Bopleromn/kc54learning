@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:kc54learning/Courses/CourseModel.dart';
 import 'package:kc54learning/Themes/TextFieldStyles.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class TeacherTitle extends StatefulWidget {
-  const TeacherTitle({super.key});
 
   @override
-  State<TeacherTitle> createState() => _TeacherTitleState();
+  State<TeacherTitle> createState() => _TeacherTitleState(course);
+
+  CourseModel? course;
+
+  TeacherTitle(CourseModel course){
+    this.course = course;
+  }
 }
 
 class _TeacherTitleState extends State<TeacherTitle> {
   late YoutubePlayerController _youtubePlayerController;
-  final VideoURL = "https://www.youtube.com/watch?v=hs2rWKLCvwg";
+  CourseModel? course;
+
+  _TeacherTitleState(CourseModel? course){
+    this.course = course;
+  }
 
   @override
   void initState() {
     super.initState();
-    final VideoID = YoutubePlayer.convertUrlToId(VideoURL);
+    final VideoID = YoutubePlayer.convertUrlToId(course!.videoUrl);
 
     _youtubePlayerController = YoutubePlayerController(initialVideoId: VideoID!,
     flags: YoutubePlayerFlags(
@@ -26,14 +36,12 @@ class _TeacherTitleState extends State<TeacherTitle> {
     )
     );
   }
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('C#', style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,),
+        title: Text(course!.title, style: Theme.of(context).textTheme.titleMedium,textAlign: TextAlign.center,),
         iconTheme: IconThemeData(
           color: Colors.blueAccent
         ),
@@ -46,7 +54,7 @@ class _TeacherTitleState extends State<TeacherTitle> {
           Expanded(child: Row(
             children: [
               Expanded(child: CircleAvatar(
-                backgroundImage: NetworkImage('https://upload.wikimedia.org/wikipedia/ru/thumb/9/94/Гигачад.jpg/250px-Гигачад.jpg'),
+                backgroundImage: NetworkImage(course!.photo),
                 radius: 100
               ), flex: 25,),
               Expanded(child: Container(),flex: 5,),
@@ -54,8 +62,8 @@ class _TeacherTitleState extends State<TeacherTitle> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(child: Container(),flex: 10,),
-                  Expanded(flex: 30,child: Text('Кирилл Михайлович Бастрыкин', style: Theme.of(context).textTheme.titleMedium,)),
-                  Expanded(child: Text('zyxel91@gmail.com', style: Theme.of(context).textTheme.labelMedium,),flex: 15,),
+                  Expanded(flex: 30,child: Text(course!.teacher!.name, style: Theme.of(context).textTheme.titleMedium,)),
+                  Expanded(child: Text(course!.teacher!.email, style: Theme.of(context).textTheme.labelMedium,),flex: 15,),
                   Expanded(child: Container(),flex: 20,)
                 ],
               ),flex: 70,),
@@ -76,7 +84,7 @@ class _TeacherTitleState extends State<TeacherTitle> {
             ),flex: 40,),
           Expanded(child: Container(),flex: 2,),
           Expanded(child: Text(
-            'Преподователь Физического моделирования, создал несколько успешных игр на Unity, хорошо разбирается в C#',
+            course!.desc,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           flex: 23),

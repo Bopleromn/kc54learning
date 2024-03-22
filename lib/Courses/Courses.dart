@@ -21,11 +21,11 @@ class _CoursesState extends State<Courses> {
 
   CategoryModel? category;
   List<CourseModel> courses = [
-    CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
-    CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
-    CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
-    CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
-    CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
+    //CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png',),
+    //CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
+    //CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
+    //CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
+    //CourseModel(id: 1, title: 'Python', desc: 'desc', videoUrl: '', photoPath: 'assets/python.png'),
   ];
 
   _CoursesState(CategoryModel? category){
@@ -81,7 +81,7 @@ class _CoursesState extends State<Courses> {
             child: Column(
               children: [
                 Padding(padding: EdgeInsets.all(30), child:
-                Image.asset(course.photoPath, fit: BoxFit.cover, width: 150,),
+                Image.asset(course.photo, fit: BoxFit.cover, width: 150,),
                 ),
                 Text(course.title, style: Theme.of(context).textTheme.titleMedium,),
               ],

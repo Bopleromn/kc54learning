@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kc54learning/Courses/CategoriesModel.dart';
+import 'package:kc54learning/Courses/CoursesModel.dart';
 import 'package:kc54learning/Courses/CategoryModel.dart';
 import 'package:kc54learning/Courses/CourseModel.dart';
 import 'package:kc54learning/Courses/Courses.dart';
@@ -17,12 +17,12 @@ class Categories extends StatefulWidget{
 }
 
 class _CategoriesState extends State<Categories> {
-  int _indexCategories = 0, _indexVideos = 0;
+  int _indexCourses = 0, _indexVideos = 0;
 
-  List<CategoryModel> categories = [
-    CategoryModel(id: 1, title: 'Figma', photo: 'assets/figma.png'),
-    CategoryModel(id: 1, title: 'Unity', photo: 'assets/unity.png'),
-    CategoryModel(id: 1, title: 'Python', photo: 'assets/python.png'),
+  List<CourseModel> courses = [
+    CourseModel(1, 'Figma', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 'assets/figma.png', 1),
+    CourseModel(1, 'Unity', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 'assets/unity.png', 1),
+    CourseModel(1, 'Python', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 'assets/python.png', 1),
   ];
   
   List<VideoModel> videos = [
@@ -68,9 +68,9 @@ class _CategoriesState extends State<Categories> {
               ],
             ), flex: 5,),
             Expanded(child: PageView.builder(
-                  itemCount: categories.length,
+                  itemCount: courses.length,
                   controller: PageController(viewportFraction: 0.8),
-                  onPageChanged: (index) => setState(() => _indexCategories = index),
+                  onPageChanged: (index) => setState(() => _indexCourses = index),
                   itemBuilder: _buildListItemCategories,
             ), flex: 12,),
             Expanded(child: Container(), flex: 2,),
@@ -94,17 +94,17 @@ class _CategoriesState extends State<Categories> {
   }
 
   Widget _buildListItemCategories(BuildContext context, int index){
-   CategoryModel category = categories[index];
+   CourseModel course = courses[index];
 
    return AnimatedPadding(
        duration: const Duration(milliseconds: 400),
        curve: Curves.fastOutSlowIn,
-       padding: EdgeInsets.all(_indexCategories == index ? 0.0 : 8.0),
+       padding: EdgeInsets.all(_indexCourses == index ? 0.0 : 8.0),
        child: GestureDetector(
          onTap: (){
            Navigator.push(
              context,
-             MaterialPageRoute(builder: (context) => TeacherTitle()),
+             MaterialPageRoute(builder: (context) => TeacherTitle(course)),
            );
          },
          child: SizedBox(
@@ -112,7 +112,7 @@ class _CategoriesState extends State<Categories> {
               padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(category.photo,),
+                    image: AssetImage(course.photo,),
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(20),
@@ -120,7 +120,7 @@ class _CategoriesState extends State<Categories> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text(category.title, style: Theme.of(context).textTheme.headlineLarge,)],
+                  children: [Text(course.title, style: Theme.of(context).textTheme.headlineLarge,)],
                 ),
               ),
          ),
@@ -160,7 +160,7 @@ class _CategoriesState extends State<Categories> {
                         Text(video.nameVideo, style: Theme.of(context).textTheme.titleSmall,),                 
                         Text(video.nameTeacher, style: Theme.of(context).textTheme.titleSmall,),                 
                       ],
-                    )            
+                    )
                   ],
                 )
               ],
@@ -172,9 +172,9 @@ class _CategoriesState extends State<Categories> {
   }
 
   void fillList() async{
-    categories = await CategoriesModel.getCategories();
+    courses = await CoursesModel.getCourses();
     setState(() {
-      categories;
+      courses;
     });
   }
 }
