@@ -114,7 +114,7 @@ class _AuthorizationState extends State<Authorization> {
         ),
       );
 
-      Navigator.of(context).pushNamed('/Main');
+      Navigator.of(context).pushNamed('/MainPage');
     }
     else{
       ScaffoldMessenger.of(context).showSnackBar(

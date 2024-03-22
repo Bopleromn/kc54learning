@@ -23,10 +23,10 @@ class _AuthorizationSuccesState extends State<AuthorizationSucces> {
       child: BlocBuilder<AuthSuccessBloc, AuthSuccessState>(
         builder: (context, state) {
           if(state is AuthSuccessLoading){
-            Navigator.of(context).pushNamed('/Authorization');
+            Navigator.of(context).pushNamed('/MenuPage');
           }
           if(state is AuthSuccessLoaded){
-            Navigator.of(context).pushNamed('/Authorization');
+            Navigator.of(context).pushNamed('/MenuPage');
           }
           return Scaffold(
             appBar: AppBar(),

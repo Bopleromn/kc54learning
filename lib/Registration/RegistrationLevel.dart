@@ -44,7 +44,7 @@ class RegistrationLevel extends StatelessWidget {
                         'Если вы не уверены в уровне знаний, попробуйте уровень для начинающих. Вв можете изменить уровень во время учёбы.',
                           style: Theme.of(context).textTheme.titleSmall,
                       ),),
-                  flex: 15,),
+                  flex: 20,),
                   Expanded(child: GestureDetector(onTap: (){
                     Navigator.of(context).pushNamed('/RegistrationTime');
                   },child: Image.asset('assets/StartLevel.png')), flex: 38,),

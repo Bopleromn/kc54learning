@@ -22,7 +22,7 @@ class _TeacherTitleState extends State<TeacherTitle> {
 
     _youtubePlayerController = YoutubePlayerController(initialVideoId: VideoID!,
     flags: YoutubePlayerFlags(
-      autoPlay: true,
+      autoPlay: false,
     )
     );
   }
@@ -46,6 +46,7 @@ class _TeacherTitleState extends State<TeacherTitle> {
           Expanded(child: Row(
             children: [
               Expanded(child: CircleAvatar(
+                backgroundImage: NetworkImage('https://upload.wikimedia.org/wikipedia/ru/thumb/9/94/Гигачад.jpg/250px-Гигачад.jpg'),
                 radius: 100
               ), flex: 25,),
               Expanded(child: Container(),flex: 5,),
@@ -81,7 +82,7 @@ class _TeacherTitleState extends State<TeacherTitle> {
           flex: 23),
           Expanded(child: Container(
           ), flex: 5,),
-          Expanded(child: ElevatedButton(onPressed: (){}, child: Text('Перейти к курсу', style: Theme.of(context).textTheme.headlineMedium,), style: mainButton(Theme.of(context).primaryColor),),flex: 8,),
+          Expanded(child: ElevatedButton(onPressed: (){}, child: Text('Перейти к Тесту', style: Theme.of(context).textTheme.headlineMedium,), style: mainButton(Theme.of(context).primaryColor),),flex: 8,),
           Expanded(child: Container(),flex: 8,)
           ],
         ),

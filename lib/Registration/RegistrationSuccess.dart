@@ -29,7 +29,7 @@ class _RegistrationSuccessState extends State<RegistrationSuccess> {
             Expanded(child: Container(),flex: 15,),
             Expanded(child: TextButton(onPressed: (){
               Navigator.of(context).pushNamedAndRemoveUntil('/Authorization', (Route<dynamic> route) => false);
-            }, child: Text('Авторизоваться',style: Theme.of(context).textTheme.labelMedium,),style: mainButton(Colors.blueAccent),),flex: 6,),
+            }, child: Text('Авторизоваться',style: Theme.of(context).textTheme.headlineMedium,),style: mainButton(Colors.blueAccent),),flex: 6,),
             Expanded(child: Container(),flex: 5,)
           ],
         ),

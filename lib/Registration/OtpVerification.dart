@@ -56,7 +56,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                   Expanded(child: Container(), flex: 3,),
           Expanded(flex: 10,child:
           Form(child:     Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
                   height: 55,

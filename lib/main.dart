@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
               '/MainPage':(context) => MainPage(),
               '/Categories':(context) => Categories(),
               },
-            initialRoute: '/Categories',
+            initialRoute: '/Authorization',
           );
         },
       ),

@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kc54learning/Courses/Categories.dart';
 
 class MainPage extends StatefulWidget{
   @override
@@ -18,7 +19,7 @@ class _MainPageState extends State<MainPage> {
         children: [
           Scaffold(),
           Scaffold(backgroundColor: Colors.black,),
-          Scaffold(),
+          Categories(),
           Scaffold()
         ],
       ),
