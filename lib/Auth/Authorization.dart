@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kc54learning/Models/StaticUserModel.dart';
-import 'package:kc54learning/Models/UserModel.dart';
 import 'package:kc54learning/Themes/TextFieldStyles.dart';
 
 class Authorization extends StatefulWidget {

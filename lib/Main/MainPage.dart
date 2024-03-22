@@ -18,7 +18,7 @@ class _MainPageState extends State<MainPage> {
         controller: _pagecontroller,
         children: [
           Scaffold(),
-          Scaffold(backgroundColor: Colors.black,),
+          Scaffold(),
           Categories(),
           Scaffold()
         ],
