@@ -6,10 +6,20 @@ import 'package:flutter/material.dart';
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.light(primary: Colors.blueAccent),
     textTheme: TextTheme(
+      headlineLarge: TextStyle(
+        color: Colors.white,
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+      ),
       headlineMedium: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
         color: Colors.white
+      ),
+      headlineSmall: TextStyle(
+        color: Colors.white,
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
       ),
       titleLarge: TextStyle(
         color: Colors.black,
