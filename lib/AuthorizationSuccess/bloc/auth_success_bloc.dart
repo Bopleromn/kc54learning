@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
 
 part 'auth_success_event.dart';
 part 'auth_success_state.dart';

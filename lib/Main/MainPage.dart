@@ -14,12 +14,13 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
+      body: PageView( 
+        physics: NeverScrollableScrollPhysics(),
         controller: _pagecontroller,
         children: [
-          Scaffold(),
-          Scaffold(backgroundColor: Colors.black,),
           Categories(),
+          Scaffold(),
+          Scaffold(),
           Scaffold()
         ],
       ),
@@ -30,9 +31,10 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Color(0xffF1F5FF).withOpacity(0.4),
         items: [
         Icon(Icons.home),
-        Icon(Icons.book_online),
+        Icon(Icons.chat),
         Icon(Icons.man),
-        Icon(Icons.settings)
+        Icon(Icons.storage),
+        Icon(Icons.support_agent)
       ],
       ),
     );
