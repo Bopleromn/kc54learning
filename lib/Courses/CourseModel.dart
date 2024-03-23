@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:kc54learning/Helpers.dart';
 
 import 'TeacherModel.dart';
+import 'TestModel.dart';
 
 class CourseModel{
   int id;
@@ -12,12 +13,15 @@ class CourseModel{
   String videoUrl;
   int idPhoto;
   int idTeacher;
-  dynamic? photo;
+  int idTest;
+  dynamic photo;
 
   TeacherModel? teacher;
+  TestModel? test;
 
-  CourseModel(this.id, this.title, this.desc, this.videoUrl, this.idPhoto,  this.idTeacher){
-    this.teacher = TeacherModel(this.idTeacher, 'assets/kirill.png');
+  CourseModel(this.id, this.title, this.desc, this.videoUrl, this.idPhoto,  this.idTeacher, this.idTest){
+    this.teacher = TeacherModel(this.idTeacher);
+    this.test = TestModel(this.idTest);
 
     setImage();
   }

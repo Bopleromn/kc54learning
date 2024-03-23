@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+import '../main.dart';
+
 class UserModel{
   int? id;
   String? email;
@@ -10,7 +12,7 @@ class UserModel{
 
   Future<bool> authorization() async{
     final response = await Dio().get(
-        'http://83.147.245.57/user_get?email=${this.email}&password=${this.password}'
+        'http://$ip/user_get?email=${this.email}&password=${this.password}'
     );
 
     final json = response.data as Map<String, dynamic>;
@@ -38,7 +40,7 @@ class UserModel{
     json['Age'] = this.age!;
 
     final response = await Dio().post(
-        'http://83.147.245.57/user_add', data: json
+        'http://$ip/user_add', data: json
     );
 
     final jsonResponse = response.data as Map<String,dynamic>;
@@ -48,7 +50,7 @@ class UserModel{
 
   Future<bool> checkMail() async{
     final response = await Dio().get(
-      'http://83.147.245.57/send_vc?email=${this.email}'
+      'http://$ip/send_vc?email=${this.email}'
     );
 
     final json = response.data as Map<String, dynamic>;
@@ -63,7 +65,7 @@ class UserModel{
 
   Future<bool> checkVerificationCode() async{
     final response = await Dio().get(
-      'http://83.147.245.57/check_vc?verificationCode=${verificationCode}&email=${email}'
+      'http://$ip/check_vc?verificationCode=${verificationCode}&email=${email}'
     );
 
     final json = response.data as Map<String, dynamic>;

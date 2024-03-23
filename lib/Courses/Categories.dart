@@ -132,11 +132,10 @@ class _CategoriesState extends State<Categories> {
       padding: EdgeInsets.all(_indexVideos == index ? 0.0 : 8.0),
       child: GestureDetector(
         onTap: () {
-                     Navigator.push(
+           Navigator.push(
              context,
              MaterialPageRoute(builder: (context) => VideoPage(video)),
            );
-
         },
         child: SizedBox(
           child: Container(

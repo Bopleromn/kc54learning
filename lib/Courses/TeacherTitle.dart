@@ -5,6 +5,8 @@ import 'package:kc54learning/Courses/CourseModel.dart';
 import 'package:kc54learning/Themes/TextFieldStyles.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+import 'Test.dart';
+
 class TeacherTitle extends StatefulWidget {
 
   @override
@@ -91,7 +93,12 @@ class _TeacherTitleState extends State<TeacherTitle> {
           flex: 23),
           Expanded(child: Container(
           ), flex: 5,),
-          Expanded(child: ElevatedButton(onPressed: (){}, child: Text('Перейти к Тесту', style: Theme.of(context).textTheme.headlineMedium,), style: mainButton(Theme.of(context).primaryColor),),flex: 8,),
+          Expanded(child: ElevatedButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Test(course!)),
+            );
+          }, child: Text('Перейти к Тесту', style: Theme.of(context).textTheme.headlineMedium,), style: mainButton(Theme.of(context).primaryColor),),flex: 8,),
           Expanded(child: Container(),flex: 8,)
           ],
         ),

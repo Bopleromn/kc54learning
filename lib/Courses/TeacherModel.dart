@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:kc54learning/Helpers.dart';
 
+import '../main.dart';
+
 class TeacherModel{
   int id;
   String? name;
@@ -8,13 +10,13 @@ class TeacherModel{
   int? imageId;
   dynamic? photo;
 
-  TeacherModel(this.id, this.photo){
+  TeacherModel(this.id){
     init();
   }
 
   Future<void> init() async{
     final response = await Dio().get(
-      'http://83.147.245.57/teacher_get?id=$id'
+      'http://$ip/teacher_get?id=$id'
     );
 
     final data = response.data as Map<String, dynamic>;

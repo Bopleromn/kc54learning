@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/Authorization.dart';
 import 'package:kc54learning/Courses/Categories.dart';
 import 'package:kc54learning/Courses/TeacherTitle.dart';
+import 'package:kc54learning/Courses/Test.dart';
 import 'package:kc54learning/Registration/Registration.dart';
 import 'package:kc54learning/Registration/RegistrationSuccess.dart';
 import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
@@ -18,6 +19,8 @@ import 'package:kc54learning/codeEdit/codeEdit.dart';
 import 'AuthAccepted.dart';
 import 'Main/MainPage.dart';
 import 'Registration/OtpVerification.dart';
+
+String ip = '192.168.1.135';
 
 void main() {
   runApp(const MyApp());
