@@ -1,3 +1,8 @@
+import 'dart:typed_data';
+
+import 'package:flutter/cupertino.dart';
+import 'package:kc54learning/Helpers.dart';
+
 import 'TeacherModel.dart';
 
 class CourseModel{
@@ -5,17 +10,19 @@ class CourseModel{
   String title;
   String desc;
   String videoUrl;
-  String photo;
+  int idPhoto;
   int idTeacher;
+  dynamic? photo;
 
   TeacherModel? teacher;
 
-  CourseModel(this.id, this.title, this.desc, this.videoUrl, this.photo, this.idTeacher){
-    initTeacher();
+  CourseModel(this.id, this.title, this.desc, this.videoUrl, this.idPhoto,  this.idTeacher){
+    this.teacher = TeacherModel(this.idTeacher, 'assets/kirill.png');
+
+    setImage();
   }
 
-  void initTeacher(){
-    //send req to get teacher
-    this.teacher = TeacherModel(1, 'Кирилл Михайлович', 'zyxel91@gmail.com', 'assets/kirill.png');
+  void setImage() async{
+    this.photo = await initImage(idPhoto);
   }
 }

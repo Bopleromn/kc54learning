@@ -54,7 +54,7 @@ class _TeacherTitleState extends State<TeacherTitle> {
           Expanded(child: Row(
             children: [
               Expanded(child: CircleAvatar(
-                backgroundImage: NetworkImage(course!.photo),
+                backgroundImage: course!.teacher!.photo,
                 radius: 100
               ), flex: 25,),
               Expanded(child: Container(),flex: 5,),
@@ -62,13 +62,14 @@ class _TeacherTitleState extends State<TeacherTitle> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(child: Container(),flex: 10,),
-                  Expanded(flex: 30,child: Text(course!.teacher!.name, style: Theme.of(context).textTheme.titleMedium,)),
-                  Expanded(child: Text(course!.teacher!.email, style: Theme.of(context).textTheme.labelMedium,),flex: 15,),
+                  Expanded(flex: 30,child: Text(course!.teacher!.name!, style: Theme.of(context).textTheme.titleMedium,)),
+                  Expanded(child: Text(course!.teacher!.email!, style: Theme.of(context).textTheme.labelMedium,),flex: 15,),
                   Expanded(child: Container(),flex: 20,)
                 ],
               ),flex: 70,),
             ],
           ),flex: 20,),
+          Expanded(child: Container(), flex: 3,),
           Expanded(
             child: Container(
               padding: EdgeInsets.all(5),
@@ -82,10 +83,10 @@ class _TeacherTitleState extends State<TeacherTitle> {
                 },
               ),
             ),flex: 40,),
-          Expanded(child: Container(),flex: 2,),
+          Expanded(child: Container(),flex: 1,),
           Expanded(child: Text(
             course!.desc,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleSmall,
           ),
           flex: 23),
           Expanded(child: Container(

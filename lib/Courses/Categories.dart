@@ -5,7 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'package:kc54learning/Courses/CoursesModel.dart';
 import 'package:kc54learning/Courses/CategoryModel.dart';
 import 'package:kc54learning/Courses/CourseModel.dart';
-import 'package:kc54learning/Courses/Courses.dart';
 import 'package:kc54learning/Courses/TeacherTitle.dart';
 import 'package:kc54learning/Themes/TextFieldStyles.dart';
 
@@ -20,9 +19,9 @@ class _CategoriesState extends State<Categories> {
   int _indexCourses = 0, _indexVideos = 0;
 
   List<CourseModel> courses = [
-    CourseModel(1, 'Figma', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 'assets/figma.png', 1),
-    CourseModel(1, 'Unity', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 'assets/unity.png', 1),
-    CourseModel(1, 'Python', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 'assets/python.png', 1),
+    //CourseModel(1, 'Figma', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 1, 3,),
+    //CourseModel(1, 'Unity', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 1, 1,),
+    //CourseModel(1, 'Python', 'Это описание для данного курса. Он очень интересный', 'https://www.youtube.com/watch?v=hs2rWKLCvwg', 1, 2,),
   ];
   
   List<VideoModel> videos = [
@@ -32,7 +31,7 @@ class _CategoriesState extends State<Categories> {
   ];
 
   _CategoriesState(){
-    //fillList();
+    fillList();
   }
 
   @override
@@ -112,15 +111,10 @@ class _CategoriesState extends State<Categories> {
               padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(course.photo,),
+                    image: course.photo!,
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text(course.title, style: Theme.of(context).textTheme.headlineLarge,)],
                 ),
               ),
          ),

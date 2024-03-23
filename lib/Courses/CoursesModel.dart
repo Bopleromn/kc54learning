@@ -9,16 +9,20 @@ import 'CourseModel.dart';
 class CoursesModel{
   static Future<List<CourseModel>> getCourses() async{
     final response = await Dio().get(
-      'http://83.147.245.57/get_all_categories'
+      'http://83.147.245.57/courses_get'
     );
 
     Map<String, dynamic> json = response.data as Map<String, dynamic>;
 
-    List<dynamic> lst = json['response'];
+    if(!json['success']){
+      return [];
+    }
+
+    List<dynamic> lst = json['data'];
     List<CourseModel> courses = [];
 
     for (var item in lst) {
-      courses.add(CourseModel(item['Id'], item['Name'], item['Description'], item['VideoURL'], item['PhotoPath'], item['idTeacher'], ));
+      courses.add(CourseModel(item['Id'], item['Title'], item['Description'], item['VideoUrl'], item['IdImg'], item['IdTeacher']));
     }
 
     return courses;
