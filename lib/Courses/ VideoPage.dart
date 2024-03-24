@@ -39,9 +39,16 @@ class _VideoPageState extends State<VideoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.withOpacity(0.2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20)
+          )
+        ),
+        elevation: 6,
+        centerTitle: false,
         title: Text(video!.nameVideo),
-        centerTitle: true,
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.black,
       ),
       body: Container(
         padding: EdgeInsets.only(left: 10,right: 10),
