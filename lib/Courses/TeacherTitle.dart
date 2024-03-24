@@ -75,8 +75,8 @@ class _TeacherTitleState extends State<TeacherTitle> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(child: Container(),flex: 20,),
-                  Expanded(flex: 20,child: Text(course!.teacher!.name, style: Theme.of(context).textTheme.titleMedium,)),
-                  Expanded(flex: 15,child: Text(course!.teacher!.email, style: Theme.of(context).textTheme.labelMedium,),),
+                  Expanded(flex: 20,child: Text(course!.teacher!.name!, style: Theme.of(context).textTheme.titleMedium,)),
+                  Expanded(flex: 15,child: Text(course!.teacher!.email!, style: Theme.of(context).textTheme.labelMedium,),),
                   Expanded(child: Container(),flex: 20,)
                 ],
               ),),
