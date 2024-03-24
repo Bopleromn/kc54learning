@@ -20,7 +20,7 @@ import 'AuthAccepted.dart';
 import 'Main/MainPage.dart';
 import 'Registration/OtpVerification.dart';
 
-String ip = '192.168.1.135';
+String ip = '83.147.245.57';
 
 void main() {
   runApp(const MyApp());
