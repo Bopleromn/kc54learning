@@ -14,7 +14,6 @@ import 'package:kc54learning/Registration/RegistrationLevel.dart';
 import 'package:kc54learning/Registration/RegistrationTime.dart';
 import 'package:kc54learning/Themes/Theme.dart';
 import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
-import 'package:kc54learning/codeEdit/codeEdit.dart';
 
 import 'AuthAccepted.dart';
 import 'Main/MainPage.dart';
