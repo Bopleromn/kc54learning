@@ -12,6 +12,7 @@ import 'package:kc54learning/Registration/registration_board_time.dart';
 import 'package:kc54learning/Themes/theme.dart';
 import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 
+import 'Registration/bloc/registration_block.dart';
 import 'registration_plan_created.dart';
 import 'Main/main_page.dart';
 import 'Registration/otp_verification.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AuthorizationBloc(),
+        ),
+        BlocProvider(
+          create: (context) => RegistrationBloc(),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(

@@ -15,13 +15,6 @@ class _MainPageState extends State<MainPage> {
   final _pagecontroller = PageController();
 
   @override
-  void initState() {
-    super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) { showSnackBar(context, 'Вы успешно вошли'); });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView( 

@@ -26,14 +26,6 @@ class _AuthorizationState extends State<Authorization> {
   final _authorizationBloc = AuthorizationBloc();
 
   @override
-  void dispose(){
-    _emailController.dispose();
-    _passwordController.dispose();
-    //_authorizationBloc.close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: BlocListener<AuthorizationBloc, AuthorizationState>(
@@ -41,6 +33,7 @@ class _AuthorizationState extends State<Authorization> {
           listener: (context, state){
             if(state is AuthorizationSuccess){
               Navigator.of(context).pop();
+              showSnackBar(context, 'Вы успешно вошли');
 
               Navigator.of(context).pushNamed('/MainPage');
             }
@@ -49,13 +42,7 @@ class _AuthorizationState extends State<Authorization> {
               showSnackBar(context, 'Неверный логин или пароль');
             }
             else if(state is AuthorizationLoading){
-              showDialog(
-                barrierDismissible: false,
-                builder: (context){
-                  return Center(child: CircularProgressIndicator());
-                },
-                context: context,
-              );
+              showLoadingCircle(context);
             }
           },
           child: authorizationPage()

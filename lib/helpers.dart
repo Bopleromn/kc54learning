@@ -13,3 +13,13 @@ void showSnackBar(context, String message){
     ),
   );
 }
+
+void showLoadingCircle(context){
+  showDialog(
+    barrierDismissible: false,
+    builder: (context){
+      return Center(child: CircularProgressIndicator());
+    },
+    context: context,
+  );
+}
