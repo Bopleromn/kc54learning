@@ -6,9 +6,9 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kc54learning/Models/StaticUserModel.dart';
-import 'package:kc54learning/Models/UserModel.dart';
-import 'package:kc54learning/Themes/TextFieldStyles.dart';
+import 'package:kc54learning/Models/current_user_class.dart';
+import 'package:kc54learning/Models/user_model.dart';
+import 'package:kc54learning/Themes/styles.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -108,12 +108,12 @@ class _RegistrationState extends State<Registration> {
     final regex = RegExp(r"(^[\w]+@[A-Za-z]{2,10}.[A-Za-z]{2,7}$)");
     if(regex.hasMatch(_emailController.text.toString()) &&
         _nameController.text.toString().length > 3 && _ageController.text.toString().length > 0 && _passwordController.text.toString().length > 5){
-      StaticUserModel.userModel.email = _emailController.text.toString();
-      StaticUserModel.userModel.name = _emailController.text.toString();
-      StaticUserModel.userModel.age = int.parse(_ageController.text.toString());
-      StaticUserModel.userModel.password = _passwordController.text.toString();
+      CurrentUser.userModel.email = _emailController.text.toString();
+      CurrentUser.userModel.name = _emailController.text.toString();
+      CurrentUser.userModel.age = int.parse(_ageController.text.toString());
+      CurrentUser.userModel.password = _passwordController.text.toString();
 
-      if(await StaticUserModel.userModel.checkMail() == true){
+      if(await CurrentUser.userModel.checkMail() == true){
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Код отправлен вам на почту'),

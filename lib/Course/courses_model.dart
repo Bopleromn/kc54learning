@@ -2,10 +2,9 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:dio/dio.dart';
-import 'package:kc54learning/Courses/CategoryModel.dart';
 
 import '../main.dart';
-import 'CourseModel.dart';
+import 'course_model.dart';
 
 class CoursesModel{
   static Future<List<CourseModel>> getCourses() async{

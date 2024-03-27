@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kc54learning/Auth/Authorization.dart';
-import 'package:kc54learning/Courses/Categories.dart';
-import 'package:kc54learning/Courses/TeacherTitle.dart';
-import 'package:kc54learning/Courses/Test.dart';
-import 'package:kc54learning/Registration/Registration.dart';
-import 'package:kc54learning/Registration/RegistrationSuccess.dart';
-import 'package:kc54learning/AuthorizationSuccess/AuthorizationSuccess.dart';
-import 'package:kc54learning/AuthorizationSuccess/bloc/auth_success_bloc.dart';
-import 'package:kc54learning/Registration/RegistrationBoardGoals.dart';
-import 'package:kc54learning/Registration/RegistrationBoardNotifications.dart';
-import 'package:kc54learning/Registration/RegistrationLevel.dart';
-import 'package:kc54learning/Registration/RegistrationTime.dart';
-import 'package:kc54learning/Themes/Theme.dart';
+import 'package:kc54learning/Auth/authorization.dart';
+import 'package:kc54learning/Auth/bloc/authorization_bloc.dart';
+import 'package:kc54learning/Course/courses.dart';
+import 'package:kc54learning/Registration/registration.dart';
+import 'package:kc54learning/Registration/registration_success.dart';
+import 'package:kc54learning/Registration/registration_board_goals.dart';
+import 'package:kc54learning/Registration/registartion_board_notifications.dart';
+import 'package:kc54learning/Registration/registartion_board_level.dart';
+import 'package:kc54learning/Registration/registration_board_time.dart';
+import 'package:kc54learning/Themes/theme.dart';
 import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 
-import 'AuthAccepted.dart';
-import 'Main/MainPage.dart';
-import 'Registration/OtpVerification.dart';
+import 'registration_plan_created.dart';
+import 'Main/main_page.dart';
+import 'Registration/otp_verification.dart';
 
 String ip = '83.147.245.57';
 
@@ -36,7 +33,7 @@ class MyApp extends StatelessWidget {
           create: (context) => ThemeCubit(),
         ),
         BlocProvider(
-          create: (context) => AuthSuccessBloc(),
+          create: (context) => AuthorizationBloc(),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
@@ -45,7 +42,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: state.brightness == Brightness.light ? lightTheme : darkTheme,
             routes: {
-              '/Authorization': (context) => Authorization(),
+              '/Auth': (context) => Authorization(),
               '/Registration': (context) => Registration(),
               '/OtpVerification':(context) => OtpVerification(),
               '/RegistrationBoardGoals':(context) => RegistrationBoardGoals(),
@@ -57,7 +54,7 @@ class MyApp extends StatelessWidget {
               '/MainPage':(context) => MainPage(),
               '/Categories':(context) => Categories(),
               },
-            initialRoute: '/MainPage',
+            initialRoute: '/Auth',
           );
         },
       ),

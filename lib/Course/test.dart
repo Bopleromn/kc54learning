@@ -1,13 +1,13 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kc54learning/Courses/CourseModel.dart';
-import 'package:kc54learning/Themes/TextFieldStyles.dart';
-import 'package:kc54learning/Themes/Theme.dart';
+import 'package:kc54learning/Course/course_model.dart';
+import 'package:kc54learning/Themes/styles.dart';
+import 'package:kc54learning/Themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:highlight/languages/dart.dart' as mode;
 
-import 'TestModel.dart';
+import 'test_model.dart';
 
 class Test extends StatefulWidget{
   @override

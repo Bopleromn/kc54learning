@@ -7,9 +7,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kc54learning/Models/StaticUserModel.dart';
-import 'package:kc54learning/Models/UserModel.dart';
-import 'package:kc54learning/Themes/TextFieldStyles.dart';
+import 'package:kc54learning/Models/current_user_class.dart';
+import 'package:kc54learning/Models/user_model.dart';
+import 'package:kc54learning/Themes/styles.dart';
 
 class OtpVerification extends StatefulWidget {
   const OtpVerification({super.key});
@@ -206,10 +206,10 @@ class _OtpVerificationState extends State<OtpVerification> {
   }
 
   Future<void> checkVC() async {
-    StaticUserModel.userModel.verificationCode = _pin1.text + _pin2.text + _pin3.text + _pin4.text + _pin5.text + _pin6.text;
+    CurrentUser.userModel.verificationCode = _pin1.text + _pin2.text + _pin3.text + _pin4.text + _pin5.text + _pin6.text;
 
-    if(StaticUserModel.userModel.verificationCode!.length == 6 && await StaticUserModel.userModel.checkVerificationCode()){
-      if(await StaticUserModel.userModel.register()){
+    if(CurrentUser.userModel.verificationCode!.length == 6 && await CurrentUser.userModel.checkVerificationCode()){
+      if(await CurrentUser.userModel.register()){
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('Вы успешно зарегистрировались'),
           backgroundColor: Colors.grey,

@@ -2,14 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kc54learning/Courses/%20VideoPage.dart';
-import 'package:kc54learning/Courses/CoursesModel.dart';
-import 'package:kc54learning/Courses/CategoryModel.dart';
-import 'package:kc54learning/Courses/CourseModel.dart';
-import 'package:kc54learning/Courses/TeacherTitle.dart';
-import 'package:kc54learning/Themes/TextFieldStyles.dart';
+import 'package:kc54learning/Course/courses_model.dart';
+import 'package:kc54learning/Course/course_model.dart';
+import 'package:kc54learning/Course/course_page.dart';
+import 'package:kc54learning/Course/video_page.dart';
+import 'package:kc54learning/Themes/styles.dart';
 
-import 'VideoModel.dart';
+import 'video_model.dart';
 
 class Categories extends StatefulWidget{
   @override

@@ -1,18 +1,23 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kc54learning/Courses/Categories.dart';
+import 'package:kc54learning/Course/courses.dart';
+
+import '../helpers.dart';
 
 class MainPage extends StatefulWidget{
   @override
   State<MainPage> createState() => _MainPageState();
-
-
 }
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final _pagecontroller = PageController();
+
+  _MainPageState(){
+    showSnackBar(context, 'Вход выполнен');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

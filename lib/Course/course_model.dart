@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
-import 'package:kc54learning/Helpers.dart';
+import 'package:kc54learning/helpers.dart';
 
-import 'TeacherModel.dart';
-import 'TestModel.dart';
+import 'teacher_model.dart';
+import 'test_model.dart';
 
 class CourseModel{
   int id;

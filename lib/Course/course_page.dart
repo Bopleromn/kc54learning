@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kc54learning/Courses/CourseModel.dart';
-import 'package:kc54learning/Courses/Test.dart';
-import 'package:kc54learning/Main/MainPage.dart';
-import 'package:kc54learning/Themes/TextFieldStyles.dart';
+import 'package:kc54learning/Course/course_model.dart';
+import 'package:kc54learning/Course/test.dart';
+import 'package:kc54learning/Main/main_page.dart';
+import 'package:kc54learning/Themes/styles.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import 'Test.dart';
+import 'test.dart';
 
 class TeacherTitle extends StatefulWidget {
 
@@ -106,9 +106,9 @@ class _TeacherTitleState extends State<TeacherTitle> {
           Expanded(child: ElevatedButton(onPressed: (){
           
           }, child: TextButton(onPressed: (){
-                                 Navigator.push(
+           Navigator.push(
              context,
-             MaterialPageRoute(builder: (context) => MainPage()),
+             MaterialPageRoute(builder: (context) => Test(course!)),
            );
           },child: Text('Перейти к Тесту', style: Theme.of(context).textTheme.headlineMedium,)), style: mainButton(Theme.of(context).primaryColor),),flex: 8,),
           Expanded(child: Container(),flex: 8,)
