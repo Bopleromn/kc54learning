@@ -26,13 +26,22 @@ class _AuthorizationState extends State<Authorization> {
   final _authorizationBloc = AuthorizationBloc();
 
   @override
+  void dispose(){
+    _emailController.dispose();
+    _passwordController.dispose();
+    //_authorizationBloc.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: BlocListener<AuthorizationBloc, AuthorizationState>(
           bloc: _authorizationBloc,
           listener: (context, state){
             if(state is AuthorizationSuccess){
-              Navigator.of(context, rootNavigator: true).pop();
+              Navigator.of(context).pop();
+
               Navigator.of(context).pushNamed('/MainPage');
             }
             else if(state is AuthorizationFailure){

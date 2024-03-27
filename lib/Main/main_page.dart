@@ -14,8 +14,11 @@ class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   final _pagecontroller = PageController();
 
-  _MainPageState(){
-    showSnackBar(context, 'Вход выполнен');
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) { showSnackBar(context, 'Вы успешно вошли'); });
   }
 
   @override
