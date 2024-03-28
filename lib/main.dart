@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/authorization.dart';
 import 'package:kc54learning/Auth/bloc/authorization_bloc.dart';
 import 'package:kc54learning/Course/main_categories.dart';
-import 'package:kc54learning/Course/many_categories.dart';
+import 'package:kc54learning/Course/storage.dart';
 import 'package:kc54learning/Registration/registration.dart';
 import 'package:kc54learning/Registration/registration_success.dart';
 import 'package:kc54learning/Registration/registration_board_goals.dart';
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
               '/MainPage':(context) => MainPage(),
               '/Categories':(context) => Categories(),
-              '/ManyCategories':(context) => ManyCategories()
+              '/Storage':(context) => Storage()
               },
             initialRoute: '/Auth',
           );
