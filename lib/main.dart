@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kc54learning/Auth/authorization.dart';
 import 'package:kc54learning/Auth/bloc/authorization_bloc.dart';
-import 'package:kc54learning/Course/courses.dart';
+import 'package:kc54learning/Course/main_categories.dart';
+import 'package:kc54learning/Course/many_categories.dart';
 import 'package:kc54learning/Registration/registration.dart';
 import 'package:kc54learning/Registration/registration_success.dart';
 import 'package:kc54learning/Registration/registration_board_goals.dart';
@@ -14,7 +15,7 @@ import 'package:kc54learning/Themes/bloc/cubit/theme_cubit.dart';
 
 import 'Registration/bloc/registration_block.dart';
 import 'registration_plan_created.dart';
-import 'Main/main_page.dart';
+import 'Main/navigation_bar.dart';
 import 'Registration/otp_verification.dart';
 
 String ip = '83.147.245.57';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
               '/RegistrationSuccess':(context) => RegistrationSuccess(),
               '/MainPage':(context) => MainPage(),
               '/Categories':(context) => Categories(),
+              '/ManyCategories':(context) => ManyCategories()
               },
             initialRoute: '/Auth',
           );

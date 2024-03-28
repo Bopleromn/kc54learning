@@ -63,9 +63,11 @@ class _CategoriesState extends State<Categories> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Курсы', style: Theme.of(context).textTheme.titleLarge,),
-                TextButton(onPressed: (){},child: Text('показать больше', style: Theme.of(context).textTheme.displayMedium,))
+                TextButton(onPressed: (){
+                  Navigator.of(context).pushNamed('/ManyCategories');
+                },child: Text('показать больше', style: Theme.of(context).textTheme.displayMedium,))
               ],
-            ), flex: 5,),
+            ),flex: 5,),
             Expanded(child: PageView.builder(
                   itemCount: courses.length,
                   controller: PageController(viewportFraction: 0.8),

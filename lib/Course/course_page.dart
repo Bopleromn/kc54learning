@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kc54learning/Course/course_model.dart';
 import 'package:kc54learning/Course/test.dart';
-import 'package:kc54learning/Main/main_page.dart';
+import 'package:kc54learning/Main/navigation_bar.dart';
 import 'package:kc54learning/Themes/styles.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 

@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kc54learning/Course/courses.dart';
+import 'package:kc54learning/Course/main_categories.dart';
 
 import '../helpers.dart';
 
