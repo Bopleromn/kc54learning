@@ -6,7 +6,7 @@ import '../../Models/current_user_class.dart';
 
 class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState>{
   RegistrationBloc() : super(RegistrationInitial()){
-    on<Register>((event, emit) async{
+    on<RegisterEvent>((event, emit) async{
       emit(RegistrationLoading());
 
       final regex = RegExp(r"(^[\w]+@[A-Za-z]{2,10}.[A-Za-z]{2,7}$)");

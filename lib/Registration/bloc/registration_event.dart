@@ -1,3 +1,3 @@
 class RegistrationEvent{}
 
-class Register extends RegistrationEvent{}
+class RegisterEvent extends RegistrationEvent{}

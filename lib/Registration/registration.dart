@@ -130,7 +130,7 @@ class _RegistrationState extends State<Registration> {
                 CurrentUser.userModel.age = int.parse(_ageController.text.toString());
                 CurrentUser.userModel.password = _passwordController.text.toString();
 
-                _registrationBloc.add(Register());
+                _registrationBloc.add(RegisterEvent());
               },
               child: Text('Создать аккаунт', style: TextStyle(color: Colors.white, fontSize: 20),),
               style: mainButton(Theme.of(context).primaryColor),
